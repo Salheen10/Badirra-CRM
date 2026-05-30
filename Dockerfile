@@ -1,23 +1,19 @@
-FROM php:8.1-apache
+FROM php:8.1.29-apache
 
 # Install dependencies and PHP extensions
-RUN apt-get update --allow-releaseinfo-change -yqq || apt-get update -yqq \
+RUN apt-get update -yqq \
     && apt-get install -y --no-install-recommends \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
     libzip-dev \
     libicu-dev \
-    libc-client-dev \
-    libkrb5-dev \
     curl \
     git \
     unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install -j$(nproc) mysqli pdo_mysql zip intl \
-    && PHP_OPENSSL=yes docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-    && docker-php-ext-install -j$(nproc) imap \
     && docker-php-ext-install -j$(nproc) exif opcache \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
