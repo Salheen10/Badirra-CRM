@@ -4,7 +4,7 @@
  * SugarCRM Community Edition is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
  *
- * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Badirra CRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2021 SalesAgility Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -33,9 +33,9 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by
- * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * SugarCRM" logo and "Supercharged by Badirra CRM" logo. If the display of the logos is not
  * reasonably feasible for technical reasons, the Appropriate Legal Notices must
- * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ * display the words "Powered by SugarCRM" and "Supercharged by Badirra CRM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -1640,7 +1640,7 @@ function is_guid($guid)
 }
 
 /**
- * Generates a UUID v4 (random) in the format required by SuiteCRM database.
+ * Generates a UUID v4 (random) in the format required by Badirra CRM database.
  *
  * Uses symfony/polyfill-uuid to generate RFC 4122 compliant UUIDs.
  * This replaces the legacy microtime-based implementation to fix PHP 8.4
@@ -1650,7 +1650,7 @@ function is_guid($guid)
  *
  * @throws RuntimeException if UUID generation fails
  *
- * @since SuiteCRM 7.15 Updated to use symfony/polyfill-uuid for PHP 8.4 compatibility
+ * @since Badirra CRM 7.15 Updated to use symfony/polyfill-uuid for PHP 8.4 compatibility
  * @see https://tools.ietf.org/html/rfc4122 RFC 4122 UUID specification
  *
  * Portions created by SugarCRM are Copyright (C) SugarCRM, Inc.
@@ -1659,7 +1659,14 @@ function is_guid($guid)
  */
 function create_guid()
 {
-    return uuid_create();
+    return sprintf(
+        '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0x0fff) | 0x4000,
+        mt_rand(0, 0x3fff) | 0x8000,
+        mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
+    );
 }
 
 function microtime_diff($a, $b)
@@ -3239,7 +3246,7 @@ function display_notice($msg = false)
 /**
  * Checks if it is a number that at least has the plus at the beginning.
  *
- * @deprecated No longer used, will be removed without replacement in SuiteCRM 7.12.
+ * @deprecated No longer used, will be removed without replacement in Badirra CRM 7.12.
  */
 function skype_formatted($number)
 {
@@ -3253,7 +3260,7 @@ function skype_formatted($number)
 }
 
 /**
- * @deprecated No longer used, will be removed without replacement in SuiteCRM 7.12.
+ * @deprecated No longer used, will be removed without replacement in Badirra CRM 7.12.
  */
 function format_skype($number)
 {

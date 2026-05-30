@@ -1,0 +1,41 @@
+{
+  "name": "suitecrm",
+  "version": "1.0.0",
+  "description": "<a href=\"https://suitecrm.com\">   <img width=\"180px\" height=\"41px\" src=\"https://suitecrm.com/wp-content/uploads/2017/12/logo.png\" align=\"right\" /> </a>",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuiteCRM/SuiteCRM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SuiteCRM/SuiteCRM/issues"
+  },
+  "homepage": "https://github.com/SuiteCRM/SuiteCRM#readme",
+  "dependencies": {
+    "@heroui/react": "^3.1.0",
+    "@tabler/core": "^1.4.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "autoprefixer": "^10.5.0",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^1.17.0",
+    "postcss": "^8.5.15",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwindcss": "^4.3.0",
+    "vite": "^8.0.14"
+  }
+}

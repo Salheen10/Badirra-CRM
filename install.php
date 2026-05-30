@@ -42,6 +42,10 @@ if (!defined('sugarEntry')) {
     define('sugarEntry', true);
 }
 
+if (file_exists('vendor/autoload.php')) {
+    require_once 'vendor/autoload.php';
+}
+
 require_once 'include/utils.php';
 @session_start();
 if (isset($_REQUEST['clear_session']) || !empty($_SESSION['loginAttempts'])) {

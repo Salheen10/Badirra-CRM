@@ -75,4 +75,6 @@ if (!class_exists(Provider::class)) {
 /**
  * Backwards compatibility for Html2Text
  */
-class_alias('Soundasleep\\Html2Text', 'Html2Text\\Html2Text');
+if (class_exists('Soundasleep\Html2Text')) {
+    class_alias('Soundasleep\Html2Text', 'Html2Text\Html2Text');
+}

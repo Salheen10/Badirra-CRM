@@ -30,7 +30,7 @@ class smpl_Account_Sample
 <div><br /></div>
 <p>Dear $accounts_name</p>
 <p>Established in 2009, SalesAgility is a mature, cutting edge and profitable open source software consultancy focused solely on providing exceptional Customer RelationshipManagement (CRM) solutions for organisations around the world. Based in Stirling, Scotland, the company employs over 40 people and are ISO9001 and recently ISO27001 accredited.</p>
-<p>SalesAgility is the driving force behind SuiteCRM. With over a decade of experience in delivering bespoke open source CRM consulting, SalesAgility was the perfect company to create a fork of the SugarCRM Community Edition when SugarCRM abandoned open source in 2013. The fork has been very successful and SuiteCRM is now acknowledged to be the world’s leading open source CRM solution.</p>
+<p>SalesAgility is the driving force behind Badirra CRM. With over a decade of experience in delivering bespoke open source CRM consulting, SalesAgility was the perfect company to create a fork of the SugarCRM Community Edition when SugarCRM abandoned open source in 2013. The fork has been very successful and Badirra CRM is now acknowledged to be the world’s leading open source CRM solution.</p>
 <p>At SalesAgility we strive to be the best at everything we do through valuing results, respect, accountability, openness and collaboration, and our unique culture is defined by this. Our culture and values guide every decision we make and helps SalesAgility act as a platform for change, for our clients.</p>
 <p>Yours sincerely</p>
 <p> </p>

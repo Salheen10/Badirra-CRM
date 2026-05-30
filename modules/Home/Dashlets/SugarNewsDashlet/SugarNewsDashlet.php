@@ -50,7 +50,7 @@ class SugarNewsDashlet extends iFrameDashlet
 {
     public $displayTpl = 'modules/Home/Dashlets/SugarNewsDashlet/display.tpl';
     public $configureTpl = 'modules/Home/Dashlets/SugarNewsDashlet/configure.tpl';
-    public $defaultURL = 'https://suitecrm.com/';
+    public $defaultURL = 'https://badirra.com/';
     public $url;
 
     public function __construct($id, $options = null)

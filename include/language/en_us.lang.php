@@ -4,8 +4,8 @@
  * SugarCRM Community Edition is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
  *
- * SuiteCRM is an extension to SugarCRM Community Edition developed by SuiteCRM Ltd.
- * Copyright (C) 2011 - 2025 SuiteCRM Ltd.
+ * Badirra CRM is an extension to SugarCRM Community Edition developed by Badirra CRM Ltd.
+ * Copyright (C) 2011 - 2025 Badirra CRM Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -33,9 +33,9 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by
- * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * SugarCRM" logo and "Supercharged by Badirra CRM" logo. If the display of the logos is not
  * reasonably feasible for technical reasons, the Appropriate Legal Notices must
- * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ * display the words "Powered by SugarCRM" and "Supercharged by Badirra CRM".
  */
 
 
@@ -102,8 +102,8 @@ $app_list_strings = array(
         'TrackerQueries' => 'Tracker Queries',
         'FAQ' => 'FAQ',
         'Newsletters' => 'Newsletters',
-        'SugarFeed' => 'SuiteCRM Feed',
-        'SugarFavorites' => 'SuiteCRM Favorites',
+        'SugarFeed' => 'Badirra CRM Feed',
+        'SugarFavorites' => 'Badirra CRM Favorites',
 
         'OAuthKeys' => 'OAuth Consumer Keys',
         'OAuthTokens' => 'OAuth Tokens',
@@ -140,7 +140,7 @@ $app_list_strings = array(
         'Documents' => 'Document',
         'Sync' => 'Sync',
         'Users' => 'User',
-        'SugarFavorites' => 'SuiteCRM Favorites',
+        'SugarFavorites' => 'Badirra CRM Favorites',
 
     ),
 
@@ -343,7 +343,7 @@ $app_list_strings = array(
     ),
     'meeting_type_dom' => array(
         'Other' => 'Other',
-        'Sugar' => 'SuiteCRM',
+        'Sugar' => 'Badirra CRM',
     ),
     'call_status_default' => 'Planned',
     'call_status_dom' => array(
@@ -806,7 +806,7 @@ $app_list_strings = array(
     ),
 
     'dom_email_link_type' => array(
-        'sugar' => 'SuiteCRM Email Client',
+        'sugar' => 'Badirra CRM Email Client',
         'mailto' => 'External Email Client',
     ),
 
@@ -1174,12 +1174,12 @@ $app_strings = array(
     'LBL_EMAIL_ADDRESS_PRIMARY' => 'Email Address',
     'LBL_EMAIL_ADDRESS_OPT_IN' => 'You have confirmed that your email address has been opted in: ',
     'LBL_EMAIL_ADDRESS_OPT_IN_ERR' => 'Unable to confirm email address',
-    'LBL_EMAIL_ARCHIVE_TO_SUITE' => 'Import to SuiteCRM',
+    'LBL_EMAIL_ARCHIVE_TO_SUITE' => 'Import to Badirra CRM',
     'LBL_EMAIL_ASSIGNMENT' => 'Assignment',
     'LBL_EMAIL_ATTACH_FILE_TO_EMAIL' => 'Attach',
     'LBL_EMAIL_ATTACHMENT' => 'Attach',
     'LBL_EMAIL_ATTACHMENTS' => 'From Local System',
-    'LBL_EMAIL_ATTACHMENTS2' => 'From SuiteCRM Documents',
+    'LBL_EMAIL_ATTACHMENTS2' => 'From Badirra CRM Documents',
     'LBL_EMAIL_ATTACHMENTS3' => 'Template Attachments',
     'LBL_EMAIL_ATTACHMENTS_FILE' => 'File',
     'LBL_EMAIL_ATTACHMENTS_DOCUMENT' => 'Document',
@@ -1230,7 +1230,7 @@ $app_strings = array(
     'LBL_EMAIL_ERROR_CHECK_IE_SETTINGS' => 'Please check your settings.',
     'LBL_EMAIL_ERROR_DESC' => 'Errors were detected: ',
     'LBL_EMAIL_DELETE_ERROR_DESC' => 'You do not have access to this area. Contact your site administrator to obtain access.',
-    'LBL_EMAIL_ERROR_DUPE_FOLDER_NAME' => 'SuiteCRM Folder names must be unique.',
+    'LBL_EMAIL_ERROR_DUPE_FOLDER_NAME' => 'Badirra CRM Folder names must be unique.',
     'LBL_EMAIL_ERROR_EMPTY' => 'Please enter some search criteria.',
     'LBL_EMAIL_ERROR_GENERAL_TITLE' => 'An error has occurred',
     'LBL_EMAIL_ERROR_MESSAGE_DELETED' => 'Message Removed from Server',
@@ -1292,7 +1292,7 @@ $app_strings = array(
     'LBL_EMAIL_IE_DELETE_SUCCESSFUL' => 'Deletion successful.',
     'LBL_EMAIL_IE_SAVE' => 'Saving Mail Account Information',
     'LBL_EMAIL_IMPORTING_EMAIL' => 'Importing Email',
-    'LBL_EMAIL_IMPORT_EMAIL' => 'Import into SuiteCRM',
+    'LBL_EMAIL_IMPORT_EMAIL' => 'Import into Badirra CRM',
     'LBL_EMAIL_IMPORT_SETTINGS' => 'Import Settings',
     'LBL_EMAIL_INVALID' => 'Invalid',
     'LBL_EMAIL_LOADING' => 'Loading...',
@@ -1437,10 +1437,10 @@ $app_strings = array(
     'LBL_SMTPTYPE_EXCHANGE' => 'Microsoft Exchange',
     'LBL_SMTPTYPE_OTHER' => 'Other',
     'LBL_EMAIL_SPACER_MAIL_SERVER' => '[ Remote Folders ]',
-    'LBL_EMAIL_SPACER_LOCAL_FOLDER' => '[ SuiteCRM Folders ]',
+    'LBL_EMAIL_SPACER_LOCAL_FOLDER' => '[ Badirra CRM Folders ]',
     'LBL_EMAIL_SUBJECT' => 'Subject',
     'LBL_EMAIL_SUCCESS' => 'Success',
-    'LBL_EMAIL_SUITE_FOLDER' => 'SuiteCRM Folder',
+    'LBL_EMAIL_SUITE_FOLDER' => 'Badirra CRM Folder',
     'LBL_EMAIL_TEMPLATE_EDIT_PLAIN_TEXT' => 'Email template body is empty',
     'LBL_EMAIL_TEMPLATES' => 'Templates',
     'LBL_EMAIL_TO' => 'To',
@@ -1489,9 +1489,9 @@ $app_strings = array(
     'ERR_EXISTING_PORTAL_USERNAME' => 'Error: The Portal Name is already assigned to another contact.',
     'ERR_COMPATIBLE_PRECISION_VALUE' => 'Field value is not compatible with precision value',
     'ERR_EXTERNAL_API_SAVE_FAIL' => 'An error occurred when trying to save to the external account.',
-    'ERR_NO_DB' => 'Could not connect to the database. Please refer to suitecrm.log for details (0).',
-    'ERR_DB_FAIL' => 'Database failure. Please refer to suitecrm.log for details.',
-    'ERR_DB_VERSION' => 'SuiteCRM {0} Files May Only Be Used With A SuiteCRM {1} Database.',
+    'ERR_NO_DB' => 'Could not connect to the database. Please refer to Badirra CRM.log for details (0).',
+    'ERR_DB_FAIL' => 'Database failure. Please refer to Badirra CRM.log for details.',
+    'ERR_DB_VERSION' => 'Badirra CRM {0} Files May Only Be Used With A Badirra CRM {1} Database.',
 
     'LBL_ACCOUNT' => 'Account',
     'LBL_ACCOUNTS' => 'Accounts',
@@ -1514,7 +1514,7 @@ $app_strings = array(
     'LBL_BACK' => 'Back',
     'LBL_BILLING_ADDRESS' => 'Billing Address',
     'LBL_QUICK_CREATE' => 'Create ',
-    'LBL_BROWSER_TITLE' => 'SuiteCRM - Open Source CRM',
+    'LBL_BROWSER_TITLE' => 'Badirra CRM - Open Source CRM',
     'LBL_BUGS' => 'Bugs',
     'LBL_BY' => 'by',
     'LBL_CALLS' => 'Calls',
@@ -1565,9 +1565,9 @@ $app_strings = array(
     'LBL_FAVORITES' => 'Favorites',
     'LBL_VCARD' => 'vCard',
     'LBL_EMPTY_VCARD' => 'Please select a vCard file',
-    'LBL_EMPTY_REQUIRED_VCARD' => 'vCard does not have all the required fields for this module. Please refer to suitecrm.log for details.',
+    'LBL_EMPTY_REQUIRED_VCARD' => 'vCard does not have all the required fields for this module. Please refer to Badirra CRM.log for details.',
     'LBL_VCARD_ERROR_FILESIZE' => 'The uploaded file exceeds the 30000 bytes size limit which was specified in the HTML form.',
-    'LBL_VCARD_ERROR_DEFAULT' => 'There was an error uploading the vCard file. Please refer to suitecrm.log for details.',
+    'LBL_VCARD_ERROR_DEFAULT' => 'There was an error uploading the vCard file. Please refer to Badirra CRM.log for details.',
     'LBL_IMPORT_VCARD' => 'Import vCard:',
     'LBL_IMPORT_VCARD_BUTTON_LABEL' => 'Import vCard',
     'LBL_IMPORT_VCARD_BUTTON_TITLE' => 'Import vCard',
@@ -1944,12 +1944,12 @@ $app_strings = array(
     'LBL_DASHLET_CONFIGURE_DISPLAY_ROWS' => 'Display Rows',
 
     // MySugar status strings
-    'LBL_MAX_DASHLETS_REACHED' => 'You have reached the maximum number of SuiteCRM Dashlets your administrator has set. Please remove a SuiteCRM Dashlet to add more.',
-    'LBL_ADDING_DASHLET' => 'Adding SuiteCRM Dashlet...',
-    'LBL_ADDED_DASHLET' => 'SuiteCRM Dashlet Added',
-    'LBL_REMOVE_DASHLET_CONFIRM' => 'Are you sure you want to remove this SuiteCRM Dashlet?',
-    'LBL_REMOVING_DASHLET' => 'Removing SuiteCRM Dashlet...',
-    'LBL_REMOVED_DASHLET' => 'SuiteCRM Dashlet Removed',
+    'LBL_MAX_DASHLETS_REACHED' => 'You have reached the maximum number of Badirra CRM Dashlets your administrator has set. Please remove a Badirra CRM Dashlet to add more.',
+    'LBL_ADDING_DASHLET' => 'Adding Badirra CRM Dashlet...',
+    'LBL_ADDED_DASHLET' => 'Badirra CRM Dashlet Added',
+    'LBL_REMOVE_DASHLET_CONFIRM' => 'Are you sure you want to remove this Badirra CRM Dashlet?',
+    'LBL_REMOVING_DASHLET' => 'Removing Badirra CRM Dashlet...',
+    'LBL_REMOVED_DASHLET' => 'Badirra CRM Dashlet Removed',
     'LBL_MAX_DASHLET_COLUMNS' => "Maximum of %s columns can be displayed.",
     'LBL_RETRIEVING_XML_DATA' => "There was a problem retrieving the XML data:\n",
 
@@ -1957,7 +1957,7 @@ $app_strings = array(
 
     'LBL_LOADING_PAGE' => 'Loading page, please wait...',
 
-    'LBL_RELOAD_PAGE' => 'Please <a href="javascript: window.location.reload()">reload the window</a> to use this SuiteCRM Dashlet.',
+    'LBL_RELOAD_PAGE' => 'Please <a href="javascript: window.location.reload()">reload the window</a> to use this Badirra CRM Dashlet.',
     'LBL_ADD_DASHLETS' => 'Add Dashlets',
     'LBL_CLOSE_DASHLETS' => 'Close',
     'LBL_OPTIONS' => 'Options',
@@ -2153,7 +2153,7 @@ $app_strings = array(
     'LBL_FIRST_INPUT_SEARCH_KEY' => '9',
 
     'ERR_CONNECTOR_NOT_ARRAY' => 'connector array in {0} been defined incorrectly or is empty and could not be used.',
-    'ERR_SUHOSIN' => 'Upload stream is blocked by Suhosin, please add &quot;upload&quot; to suhosin.executor.include.whitelist (See suitecrm.log for more information)',
+    'ERR_SUHOSIN' => 'Upload stream is blocked by Suhosin, please add &quot;upload&quot; to suhosin.executor.include.whitelist (See Badirra CRM.log for more information)',
     'ERR_BAD_RESPONSE_FROM_SERVER' => 'Bad response from the server',
     'LBL_ACCOUNT_PRODUCT_QUOTE_LINK' => 'Quote',
     'LBL_ACCOUNT_PRODUCT_SALE_PRICE' => 'Sale Price',
@@ -2212,11 +2212,11 @@ $app_strings = array(
 
     // footer
     'LBL_SUITE_TOP' => 'Back to top',
-    'LBL_SUITE_SUPERCHARGED' => 'Supercharged by SuiteCRM',
+    'LBL_SUITE_SUPERCHARGED' => 'Supercharged by Badirra CRM',
     'LBL_SUITE_POWERED_BY' => 'Powered By SugarCRM',
-    'LBL_SUITE_DESC1' => 'SuiteCRM has been written and assembled by <a href="https://suitecrm.com/">SuiteCRM Ltd</a>. The Program is provided AS IS, without warranty. Licensed under AGPLv3.',
-    'LBL_SUITE_DESC2' => 'This program is free software; you can redistribute it and/or modify it under the terms of the GNU Affero General Public License version 3 as published by the Free Software Foundation, including the additional permission set forth in the source code header.',
-    'LBL_SUITE_DESC3' => 'SuiteCRM is a trademark of SuiteCRM Ltd<. All other company and product names may be trademarks of the respective companies with which they are associated.',
+    'LBL_SUITE_DESC1' => 'Badirra CRM has been written and assembled by <a href="https://badirra.com/">Badirra CRM Ltd</a>. The Program is provided AS IS, without warranty. Licensed under AGPLv3.',
+    'LBL_SUITE_DESC2' => 'Badirra CRM represents a modern, enterprise-ready evolution of the CRM ecosystem.',
+    'LBL_SUITE_DESC3' => 'Badirra CRM is a trademark of Badirra CRM Ltd<. All other company and product names may be trademarks of the respective companies with which they are associated.',
     'LBL_GENERATE_PASSWORD_BUTTON_TITLE' => 'Reset Password',
     'LBL_SEND_CONFIRM_OPT_IN_EMAIL' => 'Send Confirm Opt In Email',
     'LBL_CONFIRM_OPT_IN_ONLY_FOR_PERSON' => 'Confirm Opt In Email sending only for Accounts/Contacts/Leads/Prospects',
@@ -2909,7 +2909,7 @@ $app_list_strings['timezone_dom'] = array(
 );
 
 $app_list_strings['eapm_list'] = array(
-    'Sugar' => 'SuiteCRM',
+    'Sugar' => 'Badirra CRM',
     'WebEx' => 'WebEx',
     'GoToMeeting' => 'GoToMeeting',
     'IBMSmartCloud' => 'IBM SmartCloud',
@@ -3588,7 +3588,7 @@ $app_strings['LBL_COLLECTION_TYPE'] = 'Type';
 
 $app_strings['LBL_ADD_TAB'] = 'Add Tab';
 $app_strings['LBL_EDIT_TAB'] = 'Edit Tabs';
-$app_strings['LBL_SUITE_DASHBOARD'] = 'SUITECRM DASHBOARD';
+$app_strings['LBL_SUITE_DASHBOARD'] = 'Badirra CRM DASHBOARD';
 $app_strings['LBL_ENTER_DASHBOARD_NAME'] = 'Enter Dashboard Name:';
 $app_strings['LBL_NUMBER_OF_COLUMNS'] = 'Number of Columns:';
 $app_strings['LBL_DELETE_DASHBOARD1'] = 'Are you sure you want to delete the';

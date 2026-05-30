@@ -126,3 +126,13 @@ codeception.yml
 .env
 .env.test
 .env.dev
+ 
+# Custom scripts and temp files
+*.bat
+*.md
+*.zip
+*.tar.gz
+cookie.txt
+out*.html
+upload_out.txt
+extract_temp/

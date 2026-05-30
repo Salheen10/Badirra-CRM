@@ -572,6 +572,8 @@
                                    >{$GCL.LABEL}</a>
                             </li>
                         {/foreach}
+                        <li role="presentation"><a role="menuitem" class="dark-mode-toggle utilsLink" style="cursor: pointer;" onclick="window.toggleBadirraDarkMode(event)">Dark Mode: <span class="dark-mode-state">Off</span></a></li>
+                        <li role="presentation"><a role="menuitem" class="enterprise-mode-toggle utilsLink" style="cursor: pointer;" onclick="window.toggleEnterpriseMode(event)">Enterprise Mode: <span class="enterprise-mode-state">Off</span></a></li>
                         <li role="presentation"><a role="menuitem" id="logout_link" href='{$LOGOUT_LINK}'
                                                    class='utilsLink'>{$LOGOUT_LABEL}</a></li>
                     </ul>
@@ -662,6 +664,8 @@
                                    >{$GCL.LABEL}</a>
                             </li>
                         {/foreach}
+                        <li role="presentation"><a role="menuitem" class="dark-mode-toggle utilsLink" style="cursor: pointer;" onclick="window.toggleBadirraDarkMode(event)">Dark Mode: <span class="dark-mode-state">Off</span></a></li>
+                        <li role="presentation"><a role="menuitem" class="enterprise-mode-toggle utilsLink" style="cursor: pointer;" onclick="window.toggleEnterpriseMode(event)">Enterprise Mode: <span class="enterprise-mode-state">Off</span></a></li>
                         <li role="presentation"><a role="menuitem" id="logout_link" href='{$LOGOUT_LINK}'
                                                    class='utilsLink'>{$LOGOUT_LABEL}</a></li>
                     </ul>
@@ -752,6 +756,8 @@
                                    >{$GCL.LABEL}</a>
                             </li>
                         {/foreach}
+                        <li role="presentation"><a role="menuitem" class="dark-mode-toggle utilsLink" style="cursor: pointer;" onclick="window.toggleBadirraDarkMode(event)">Dark Mode: <span class="dark-mode-state">Off</span></a></li>
+                        <li role="presentation"><a role="menuitem" class="enterprise-mode-toggle utilsLink" style="cursor: pointer;" onclick="window.toggleEnterpriseMode(event)">Enterprise Mode: <span class="enterprise-mode-state">Off</span></a></li>
                         <li role="presentation"><a role="menuitem" id="logout_link" href='{$LOGOUT_LINK}'
                                                    class='utilsLink'>{$LOGOUT_LABEL}</a></li>
                     </ul>

@@ -1,6 +1,6 @@
 <?php
 /**
- * SuiteCRM is a customer relationship management program developed by SalesAgility Ltd.
+ * Badirra CRM is a customer relationship management program developed by SalesAgility Ltd.
  * Copyright (C) 2021 SalesAgility Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -20,9 +20,9 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License
  * version 3, these Appropriate Legal Notices must retain the display of the
- * "Supercharged by SuiteCRM" logo. If the display of the logos is not reasonably
+ * "Supercharged by Badirra CRM" logo. If the display of the logos is not reasonably
  * feasible for technical reasons, the Appropriate Legal Notices must display
- * the words "Supercharged by SuiteCRM".
+ * the words "Supercharged by Badirra CRM".
  */
 
 namespace SuiteCRM\PDF\TCPDF;

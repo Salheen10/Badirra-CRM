@@ -45,7 +45,7 @@ global $sugar_config, $mod_strings;
 
 ?>
 <div class="about" id="about_header">
-    <h1><img src="include/images/suite_logo.png" alt="SuiteCRM"></h1>
+    <h1><img src="themes/default/images/company_logo.png" alt="Badirra CRM" style="max-height:60px"></h1>
     <br>
     <b>
         <?php echo $mod_strings['LBL_VERSION'] . ' ' . $suitecrm_version;
@@ -74,12 +74,12 @@ global $sugar_config, $mod_strings;
                     <ul id="about_menu">
           
                         <li><?php echo $mod_strings['LBL_MAINTAINER_SUITECRM']; ?> (<a
-                                    href="https://suitecrm.com/about/about-us/suitecrm-ltd"
-                                    target="_blank">https://suitecrm.com</a>)
+                                    href="https://badirra.com/"
+                                    target="_blank">https://badirra.com</a>)
                         </li>
                         <li><?php echo $mod_strings['LBL_CONTRIBUTOR_SECURITY_SUITE']; ?> (<a
-                                    href="https://store.suitecrm.com/addons/securitysuite?tag=suitecrm"
-                                    target="_blank" rel="noreferrer">https://store.suitecrm.com/</a>)
+                                    href="https://badirra.com/"
+                                    target="_blank" rel="noreferrer">https://badirra.com/</a>)
                         </li>
                         <li><?php echo $mod_strings['LBL_CONTRIBUTOR_JJW_GMAPS']; ?>
                         </li>
@@ -114,7 +114,7 @@ global $sugar_config, $mod_strings;
                     <h3><?php echo $mod_strings['LBL_PARTNERS']; ?></h3>
                     <ul id="about_menu">
                         <li><?php echo $mod_strings['LBL_SUITE_PARTNERS']; ?> (<a
-                                    href="https://suitecrm.com/about/about-us/partners">https://suitecrm.com</a>)
+                                    href="https://badirra.com/">https://badirra.com</a>)
                         </li>
                     </ul>
                 </div>

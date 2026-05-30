@@ -4,7 +4,7 @@
  * SugarCRM Community Edition is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
  *
- * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Badirra CRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2019 SalesAgility Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -33,9 +33,9 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by
- * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * SugarCRM" logo and "Supercharged by Badirra CRM" logo. If the display of the logos is not
  * reasonably feasible for technical reasons, the Appropriate Legal Notices must
- * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ * display the words "Powered by SugarCRM" and "Supercharged by Badirra CRM".
  */
 
 namespace SuiteCRM\Robo\Plugin\Commands;
@@ -86,7 +86,7 @@ class ApiCommands extends Tasks
     }
 
     /**
-     * Configures the SuiteCRM V8 API with all defaults
+     * Configures the Badirra CRM V8 API with all defaults
      * @param string $name
      * @param string $password
      * @throws \Exception
@@ -192,7 +192,7 @@ class ApiCommands extends Tasks
     }
 
     /**
-     * Creates a SuiteCRM user for the V8 API
+     * Creates a Badirra CRM user for the V8 API
      * @param string $name
      * @param string $password
      * @return void
@@ -227,10 +227,10 @@ class ApiCommands extends Tasks
         $opts = ['postmanENV' => __DIR__ . '/../../../../Api/docs/postman/V8_API_Postman_Environment.json']
     ) {
         $rows = [
-            'name' => 'SuiteCRM V8 API Environment',
+            'name' => 'Badirra CRM V8 API Environment',
             'values' => [
                 [
-                    'key' => 'suitecrm.url',
+                    'key' => 'Badirra CRM.url',
                     'value' => '{instance}/Api',
                     'description' => 'Used for API Operations.',
                     'enabled' => true

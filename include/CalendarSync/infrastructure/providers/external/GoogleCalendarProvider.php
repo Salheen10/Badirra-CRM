@@ -1,13 +1,13 @@
 <?php
 /**
- * SuiteCRM is a customer relationship management program developed by SuiteCRM Ltd.
- * Copyright (C) 2025 SuiteCRM Ltd.
+ * Badirra CRM is a customer relationship management program developed by Badirra CRM Ltd.
+ * Copyright (C) 2025 Badirra CRM Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
  * Free Software Foundation with the addition of the following permission added
  * to Section 15 as permitted in Section 7(a): FOR ANY PART OF THE COVERED WORK
- * IN WHICH THE COPYRIGHT IS OWNED BY SUITECRM, SUITECRM DISCLAIMS THE
+ * IN WHICH THE COPYRIGHT IS OWNED BY Badirra CRM, Badirra CRM DISCLAIMS THE
  * WARRANTY OF NON INFRINGEMENT OF THIRD PARTY RIGHTS.
  *
  * This program is distributed in the hope that it will be useful, but WITHOUT
@@ -20,9 +20,9 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License
  * version 3, these Appropriate Legal Notices must retain the display of the
- * "Supercharged by SuiteCRM" logo. If the display of the logos is not reasonably
+ * "Supercharged by Badirra CRM" logo. If the display of the logos is not reasonably
  * feasible for technical reasons, the Appropriate Legal Notices must display
- * the words "Supercharged by SuiteCRM".
+ * the words "Supercharged by Badirra CRM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -40,10 +40,10 @@ use Google\Service\Calendar\EventDateTime;
 use Google\Service\Calendar\EventExtendedProperties;
 
 /**
- * Provides integration with Google Calendar for SuiteCRM.
+ * Provides integration with Google Calendar for Badirra CRM.
  *
  * This class manages OAuth-based authentication, interaction with the Google Calendar API, and synchronization
- * of calendar events between SuiteCRM and Google Calendar. It includes methods for testing the connection,
+ * of calendar events between Badirra CRM and Google Calendar. It includes methods for testing the connection,
  * retrieving events, and managing OAuth tokens.
  *
  * Required OAuth scopes: openid, email, profile, https://www.googleapis.com/auth/calendar
@@ -120,7 +120,7 @@ class GoogleCalendarProvider extends AbstractCalendarProvider
         $accessToken = $this->getAuthenticatedAccessToken();
 
         $this->googleClient = new Client();
-        $this->googleClient->setApplicationName('SuiteCRM Calendar Sync');
+        $this->googleClient->setApplicationName('Badirra CRM Calendar Sync');
         $this->googleClient->setScopes([Calendar::CALENDAR]);
         $this->googleClient->setAccessToken($accessToken);
 
@@ -195,12 +195,12 @@ class GoogleCalendarProvider extends AbstractCalendarProvider
     }
 
     /**
-     * Retrieves the ID of the existing "SuiteCRM" calendar or creates a new one if not found.
-     * If the calendar already exists, its ID is returned. Otherwise, a new "SuiteCRM"
+     * Retrieves the ID of the existing "Badirra CRM" calendar or creates a new one if not found.
+     * If the calendar already exists, its ID is returned. Otherwise, a new "Badirra CRM"
      * calendar is created, and its ID is returned.
      * Logs information and error messages regarding the operation status.
      *
-     * @return string The ID of the "SuiteCRM" calendar.
+     * @return string The ID of the "Badirra CRM" calendar.
      * @throws RuntimeException If the operation to retrieve or create the calendar fails.
      */
     protected function getOrCreateSuiteCRMCalendar(): string
@@ -213,24 +213,24 @@ class GoogleCalendarProvider extends AbstractCalendarProvider
             $calendarName = $this->getExternalCalendarName();
             foreach ($calendarList->getItems() as $calendar) {
                 if ($calendar->getSummary() === $calendarName) {
-                    $log->info('GoogleCalendarProvider: Found existing SuiteCRM calendar: ' . $calendar->getId());
+                    $log->info('GoogleCalendarProvider: Found existing Badirra CRM calendar: ' . $calendar->getId());
                     return $calendar->getId();
                 }
             }
 
             $calendar = new Calendar\Calendar();
             $calendar->setSummary($calendarName);
-            $calendar->setDescription('Calendar managed by SuiteCRM');
+            $calendar->setDescription('Calendar managed by Badirra CRM');
 
             $createdCalendar = $this->calendarService->calendars->insert($calendar);
             $calendarId = $createdCalendar->getId();
 
-            $log->info('GoogleCalendarProvider: Created new SuiteCRM calendar: ' . $calendarId);
+            $log->info('GoogleCalendarProvider: Created new Badirra CRM calendar: ' . $calendarId);
             return $calendarId;
 
         } catch (Throwable $e) {
-            $log->error('GoogleCalendarProvider: Failed to get or create SuiteCRM calendar: ' . $e->getMessage());
-            throw new RuntimeException('Failed to get or create SuiteCRM calendar: ' . $e->getMessage());
+            $log->error('GoogleCalendarProvider: Failed to get or create Badirra CRM calendar: ' . $e->getMessage());
+            throw new RuntimeException('Failed to get or create Badirra CRM calendar: ' . $e->getMessage());
         }
     }
 

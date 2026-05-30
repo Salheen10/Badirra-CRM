@@ -4,7 +4,7 @@ namespace SuiteCRM;
 
 /**
  * Class SugarCleaner
- * @package SuiteCRM
+ * @package Badirra CRM
  * Html Sanitizer
  */
 #[\AllowDynamicProperties]

@@ -75,6 +75,11 @@
     </script>
     {/literal}
     {$SUGAR_CSS}
+    <!-- Badirra Custom Core -->
+    <link href="{sugar_getjspath file='custom/themes/SuiteP/css/badirra_fixes.css'}" rel="stylesheet" type="text/css"/>
+    <link href="custom/themes/SuiteP/css/enterprise_mode_v10.css?t={$smarty.now}" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="custom/themes/SuiteP/js/badirra_enhancements_v10.js?t={$smarty.now}"></script>
+
     <link rel="stylesheet" type="text/css" href="themes/SuiteP/css/colourSelector.php">
     <script type="text/javascript" src='{sugar_getjspath file="themes/SuiteP/js/jscolor.js"}'></script>
     <script type="text/javascript" src='{sugar_getjspath file="cache/include/javascript/sugar_field_grp.js"}'></script>

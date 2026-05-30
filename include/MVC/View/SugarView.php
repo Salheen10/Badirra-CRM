@@ -4,7 +4,7 @@
  * SugarCRM Community Edition is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
  *
- * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Badirra CRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2024 SalesAgility Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -33,9 +33,9 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by
- * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * SugarCRM" logo and "Supercharged by Badirra CRM" logo. If the display of the logos is not
  * reasonably feasible for technical reasons, the Appropriate Legal Notices must
- * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ * display the words "Powered by SugarCRM" and "Supercharged by Badirra CRM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -250,18 +250,9 @@ class SugarView
         if ($this->_getOption('json_output')) {
             $content = ob_get_clean();
             $module = $this->module;
-
-            $processed_content = $content;
-            if (mb_detect_encoding($content) !== "UTF-8") {
-                global $sugar_config;
-                $target_charset = $sugar_config['default_charset'] ?? 'UTF-8';
-                $detected = mb_detect_encoding($content, [$target_charset, 'ISO-8859-1', 'Windows-1252'], true);
-                $source_charset = $detected ?: $target_charset;
-                $processed_content = mb_convert_encoding($content, 'UTF-8', $source_charset);
-            }
             
             $ajax_ret = array(
-                'content' => $processed_content,
+                'content' => $content,
                 'menu' => array(
                     'module' => $module,
                     'label' => translate($module),
@@ -1865,7 +1856,7 @@ EOHTML;
             $favicon = $themeObject->getImageURL($this->module . '.gif', false);
         }
         if (!is_file($favicon) || !$module_favicon) {
-            $favicon = $themeObject->getImageURL('sugar_icon.ico', false);
+            $favicon = $themeObject->getImageURL('company_logo.png', false);
         }
 
         $extension = pathinfo($favicon, PATHINFO_EXTENSION);

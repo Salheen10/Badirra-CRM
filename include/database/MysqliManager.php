@@ -7,7 +7,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * SugarCRM Community Edition is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
  *
- * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Badirra CRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -36,9 +36,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by
- * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * SugarCRM" logo and "Supercharged by Badirra CRM" logo. If the display of the logos is not
  * reasonably feasible for technical reasons, the Appropriate Legal Notices must
- * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ * display the words "Powered by SugarCRM" and "Supercharged by Badirra CRM".
  */
 
 /*********************************************************************************
@@ -340,7 +340,7 @@ class MysqliManager extends MysqlManager
                     if (isset($GLOBALS['app_strings']['ERR_NO_DB'])) {
                         sugar_die($GLOBALS['app_strings']['ERR_NO_DB']);
                     } else {
-                        sugar_die("Could not connect to the database. Please refer to suitecrm.log for details (2).");
+                        sugar_die("Could not connect to the database. Please refer to Badirra CRM.log for details (2).");
                     }
                 } else {
                     return false;
@@ -354,7 +354,7 @@ class MysqliManager extends MysqlManager
                 if (isset($GLOBALS['app_strings']['ERR_NO_DB'])) {
                     sugar_die($GLOBALS['app_strings']['ERR_NO_DB']);
                 } else {
-                    sugar_die("Could not connect to the database. Please refer to suitecrm.log for details (2).");
+                    sugar_die("Could not connect to the database. Please refer to Badirra CRM.log for details (2).");
                 }
             } else {
                 return false;

@@ -4,7 +4,7 @@
  * SugarCRM Community Edition is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
  *
- * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Badirra CRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2019 SalesAgility Ltd.
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -33,9 +33,9 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by
- * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * SugarCRM" logo and "Supercharged by Badirra CRM" logo. If the display of the logos is not
  * reasonably feasible for technical reasons, the Appropriate Legal Notices must
- * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ * display the words "Powered by SugarCRM" and "Supercharged by Badirra CRM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -868,7 +868,7 @@ function handleSugarConfig()
         array('level'=>$setup_site_log_level,
             'file' => array(
                 'ext' => '.log',
-                'name' => 'suitecrm',
+                'name' => 'Badirra CRM',
                 'dateFormat' => '%c',
                 'maxSize' => '10MB',
                 'maxLogs' => 10,
@@ -995,7 +995,7 @@ function handleHtaccess()
     $cacheDir = $sugar_config['cache_dir'];
 
     $restrict_str = <<<EOQ
-# BEGIN SUITECRM RESTRICTIONS
+# BEGIN Badirra CRM RESTRICTIONS
 
 EOQ;
     if (ini_get('suhosin.perdir') !== false && strpos(ini_get('suhosin.perdir'), 'e') !== false) {
@@ -1120,10 +1120,10 @@ EOQ;
         RewriteCond %{REQUEST_URI} (.+)/$
         RewriteRule ^ %1 [R=301,L]
 </IfModule>
-# END SUITECRM RESTRICTIONS
+# END Badirra CRM RESTRICTIONS
 EOQ;
 
-    // add custom content from current '.htaccess' before "# BEGIN SUITECRM RESTRICTIONS"
+    // add custom content from current '.htaccess' before "# BEGIN Badirra CRM RESTRICTIONS"
     $haveBegin = false;
     if (file_exists($htaccess_file)) {
         $fp = fopen($htaccess_file, 'rb');
@@ -1139,7 +1139,7 @@ EOQ;
     }
     // add default content
     $contents .= $restrict_str . $cache_headers;
-    // add custom content from current '.htaccess' after "# END SUITECRM RESTRICTIONS"
+    // add custom content from current '.htaccess' after "# END Badirra CRM RESTRICTIONS"
     if ($haveBegin && file_exists($htaccess_file)) {
         $skip = true;
         $fp = fopen($htaccess_file, 'rb');
@@ -1183,7 +1183,7 @@ function handleWebConfig()
     if (empty($setup_site_log_file)) {
         $setup_site_log_file = $sugar_config['log_file'];
         if (empty($sugar_config['log_file'])) {
-            $setup_site_log_file = 'suitecrm.log';
+            $setup_site_log_file = 'Badirra CRM.log';
         }
     }
     if (empty($setup_site_log_dir)) {
@@ -1360,7 +1360,7 @@ function insert_default_settings()
     if (isset($_SESSION['smtp_from_addr']) && $_SESSION['smtp_from_addr']) {
         $fromAddress = $_SESSION['smtp_from_addr'];
     }
-    $fromName = 'SuiteCRM';
+    $fromName = 'Badirra CRM';
     if (isset($_SESSION['smtp_from_name']) && $_SESSION['smtp_from_name']) {
         $fromName = $_SESSION['smtp_from_name'];
     }

@@ -73,8 +73,8 @@ $login_image = is_file('custom/include/images/sugar_md.png') ?
 $login_image_url = SugarThemeRegistry::current()->getImageURL('company_logo.png');
 $login_image = '<IMG src="' . $login_image_url . '" alt="SuiteCRM" style="margin: 5px 0;">';
 
-
 $sugar_smarty->assign('LOGIN_IMAGE', $login_image);
+$sugar_smarty->assign('COMPANY_LOGO_URL', $login_image_url);
 
 // See if any messages were passed along to display to the user.
 if (isset($_COOKIE['loginErrorMessage'])) {

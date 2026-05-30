@@ -43,23 +43,20 @@
 <!-- END of container-fluid, pageContainer divs -->
 <!-- Start Footer Section -->
 {if $AUTHENTICATED}
-    <!-- Start generic footer -->
+    <!-- Start Badirra CRM Footer -->
     <footer>
         <div id="copyright_data" class="footer_left">
-            <div id="dialog2" title="{$APP.LBL_SUITE_SUPERCHARGED}" style="display: none">
+            <div id="dialog2" title="Supercharged by Badirra CRM" style="display: none">
                 <p>{$APP.LBL_SUITE_DESC1}</p>
                 <br>
                 <p>{$APP.LBL_SUITE_DESC2}</p>
                 <br>
-                <p>{$APP.LBL_SUITE_DESC3}</p>
-                <br>
             </div>
-            <div id="dialog" title="&copy; {$APP.LBL_SUITE_POWERED_BY}" style="display: none">
+            <div id="dialog" title="&copy; Powered by Badirra CRM" style="display: none">
                 <p>{$COPYRIGHT}</p>
             </div>
             <div id="copyrightbuttons">
-                <a id="admin_options">&copy; {$APP.LBL_SUITE_SUPERCHARGED}</a>
-                <a id="powered_by">&copy; {$APP.LBL_SUITE_POWERED_BY}</a>
+                <a id="admin_options" href="https://badirra.com/" target="_blank">&copy; Badirra CRM</a>
             </div>
         </div>
         {if $STATISTICS}
@@ -68,11 +65,10 @@
         </div>
         {/if}
     	<div class="footer_right">
-    		
     		<a onclick="SUGAR.util.top();" href="javascript:void(0)">{$APP.LBL_SUITE_TOP}<span class="suitepicon suitepicon-action-above"></span> </a>
     	</div>
     </footer>
-    <!-- END Generic Footer -->
+    <!-- END Badirra CRM Footer -->
 {/if}
 <!-- END Footer Section -->
 {literal}

@@ -72,7 +72,7 @@ class iFrameDashlet extends Dashlet
 
         if (empty($options['url'])) {
             $this->url = $this->defaultURL;
-            $this->url = 'https://suitecrm.com/';
+            $this->url = 'https://badirra.com/';
         } else {
             $this->url = $options['url'];
         }

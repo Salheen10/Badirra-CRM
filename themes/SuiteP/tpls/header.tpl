@@ -39,7 +39,7 @@
  */
 *}
 {include file="themes/SuiteP/tpls/_head.tpl"}
-<body onMouseOut="closeMenus();">
+<body onMouseOut="closeMenus();" class="theme-light">
 
 {if $AUTHENTICATED}
     <div id="ajaxHeader">

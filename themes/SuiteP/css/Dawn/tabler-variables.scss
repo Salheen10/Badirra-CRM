@@ -1,0 +1,65 @@
+/* ============================================================================
+   Badirra CRM — Tabler Light Mode Variable Overrides
+   These variables override SuiteP's default structural colors (navbar, sidebar,
+   backgrounds) before they are defined with !default, enforcing a clean
+   Tabler Light Mode UI across the entire CRM.
+   ============================================================================ */
+
+/* Page Background */
+$body-bg: #f4f6fa;
+$main-bg: #f4f6fa;
+$main-alternate-bg: #ffffff;
+
+/* Top Navbar (Light Mode) */
+$navbar-inverse-bg: #ffffff;
+$navbar-inverse-color: #182433;
+$navbar-inverse-link-color: #182433;
+$navbar-inverse-link-hover-color: #206bc4;
+$navbar-inverse-brand-color: #182433;
+$navbar-inverse-brand-hover-color: #206bc4;
+$navbar-inverse-toggle-hover-bg: #f4f6fa;
+$navbar-inverse-toggle-icon-bar-bg: #182433;
+
+/* Search Box */
+$navbar-search-bg: #f4f6fa;
+$navbar-search-text-color: #182433;
+$navbar-search-color: #182433;
+
+/* Profile & Notification Dropdowns (Fixing purple boxes) */
+$navbar-alert-count-link-color: #182433;
+$navbar-alert-link-color: #182433;
+$navbar-alert-body-color: #182433;
+$navbar-alert-body-bg: #ffffff;
+$navbar-alert-title-bg: #f4f6fa;
+$navbar-alert-title-color: #182433;
+$navbar-user-color: #182433;
+$navbar-user-color-hover: #206bc4;
+
+/* Quick Create Menu */
+$navbar-quick-create-menu-bg: #ffffff;
+$navbar-quick-create-menu-color: #182433;
+$navbar-quick-create-btn-bg: #ffffff;
+$navbar-quick-create-btn-bg-hover: #f4f6fa;
+$navbar-quick-create-mobile-btn-bg: #ffffff;
+
+/* Sidebar & Dashboard Menus */
+$sidebar-bg: #ffffff;
+$sidebar-btn-bg: #ffffff;
+$sidebar-btn-bg-hover: #f4f6fa;
+$sidebar-btn-color: #182433;
+$side-bar-header-color: #626976;
+$nav-selection-bg: #f4f6fa;
+$nav-selection-color: #182433;
+
+/* Text Colors */
+$text-color: #182433;
+$headings-color: #182433;
+
+/* Dropdowns & Forms */
+$dropdown-bg: #ffffff;
+$dropdown-link-color: #182433;
+$dropdown-link-hover-color: #206bc4;
+$dropdown-link-hover-bg: #f4f6fa;
+$input-bg: #ffffff;
+$input-color: #182433;
+$input-border: #e6e8e9;
