@@ -1,7 +1,7 @@
 FROM php:8.1-apache
 
 # Install dependencies and PHP extensions
-RUN apt-get update -yqq --fix-missing || apt-get update -yqq \
+RUN apt-get update --allow-releaseinfo-change -yqq || apt-get update -yqq \
     && apt-get install -y --no-install-recommends \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
