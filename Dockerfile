@@ -18,8 +18,14 @@ RUN apt-get update -yqq \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Copy composer from the official composer image
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 # Copy application files to the container
 COPY . /var/www/html/
+
+# Install composer dependencies
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/html \
