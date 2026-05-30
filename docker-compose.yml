@@ -19,15 +19,12 @@ services:
     build: .
     ports:
       - "8080:80"
-    volumes:
-      - .:/var/www/html
     environment:
       - DB_HOST=db
       - DB_PORT=3306
       - DB_NAME=${MYSQL_DATABASE:-badirra_crm}
       - DB_USER=${MYSQL_USER:-badirra}
       - DB_PASSWORD=${MYSQL_PASSWORD:-badirra}
-    command: /bin/sh -c "chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html && apache2-foreground"
     depends_on:
       - db
     networks:

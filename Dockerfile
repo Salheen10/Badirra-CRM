@@ -18,6 +18,13 @@ RUN apt-get update -yqq \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Copy application files to the container
+COPY . /var/www/html/
+
+# Fix permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
 # Configure OPcache
 RUN { \
         echo 'opcache.memory_consumption=256'; \
