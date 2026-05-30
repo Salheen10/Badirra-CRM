@@ -8,8 +8,6 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE:-badirra_crm}
       - MYSQL_USER=${MYSQL_USER:-badirra}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD:-badirra}
-    ports:
-      - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
     networks:
