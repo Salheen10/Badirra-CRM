@@ -29,7 +29,7 @@ RUN COMPOSER_ALLOW_SUPERUSER=1 COMPOSER_MEMORY_LIMIT=-1 composer install --no-de
 
 # Extract Arabic language directly into the root folder (bypassing the unreliable PHP installer)
 RUN unzip -o auto_install/ar_SuiteCRM_lang_7.15.zip -d /var/www/html/ \
-    && echo "<?php\n\$sugar_config['default_language'] = 'ar_AE';" > /var/www/html/config_override.php
+    && printf "<?php\n\$sugar_config['default_language'] = 'ar_AE';\n" > /var/www/html/config_override.php
 
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/html \
