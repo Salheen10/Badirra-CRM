@@ -1,0 +1,425 @@
+/* ==========================================================================
+   ENTERPRISE MODE UI ENGINE (Odoo-Inspired Deep Layout Transformation)
+   ========================================================================== */
+
+html[data-enterprise="true"] {
+    /* Odoo Enterprise Branding */
+    --ent-primary: #714B67;
+    --ent-primary-dark: #5a3c52;
+    --ent-secondary: #00a09d; /* Action Teal */
+    --ent-secondary-dark: #00827f;
+    --ent-bg: #f9f9f9;
+    --ent-sheet-bg: #ffffff;
+    --ent-text: #212529;
+    --ent-text-muted: #6c757d;
+    --ent-border: #e2e6ea;
+    --ent-radius: 4px;
+    --ent-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    --ent-shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --ent-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html[data-enterprise="true"] body {
+    font-family: var(--ent-font) !important;
+    background-color: var(--ent-bg) !important;
+    color: var(--ent-text) !important;
+}
+
+/* ==========================================================================
+   1. APP SHELL & WAFFLE MENU NAVIGATION
+   ========================================================================== */
+
+/* Transform Home Icon to Waffle Icon cleanly without breaking the layout flow */
+html[data-enterprise="true"] .suitepicon-action-home::before {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>') !important;
+    display: inline-block;
+    transform: translateY(3px);
+}
+html[data-enterprise="true"] .navbar-brand.with-home-icon {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+html[data-enterprise="true"] .navbar-brand.with-home-icon:hover {
+    opacity: 1;
+}
+html[data-enterprise="true"] .ent-waffle-btn {
+    display: flex !important; /* Only show when enterprise mode is active */
+}
+.ent-waffle-btn:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Fullscreen App Switcher Overlay */
+.ent-app-switcher {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+    padding: 40px;
+}
+.ent-app-switcher.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+html[data-theme="dark"][data-enterprise="true"] .ent-app-switcher {
+    background: rgba(30, 30, 30, 0.95);
+}
+
+/* When on the Home Screen, the App Switcher IS the page (Odoo Style) */
+body.ent-home-screen {
+    background: var(--ent-bg) !important;
+    overflow: hidden; /* Prevent body scrolling, let App Switcher scroll */
+}
+
+/* Hide the main SuiteCRM layout elements on the Home screen so the Grid stands alone */
+body.ent-home-screen > #pagecontent,
+body.ent-home-screen > #sidebar_container,
+body.ent-home-screen > #footer,
+body.ent-home-screen > footer {
+    display: none !important;
+}
+
+body.ent-home-screen .ent-app-switcher {
+    position: absolute !important;
+    top: 50px !important; /* Start exactly below the 50px fixed navbar */
+    left: 0 !important;
+    right: 0 !important;
+    height: calc(100vh - 50px) !important;
+    background: var(--ent-bg) !important;
+    backdrop-filter: none !important;
+    z-index: 1 !important; /* Go below the navbar (z-index 1030) */
+    opacity: 1 !important; /* Force visible */
+    pointer-events: all !important;
+}
+html[data-theme="dark"][data-enterprise="true"] body.ent-home-screen .ent-app-switcher {
+    background: var(--ent-bg) !important;
+}
+
+.ent-app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ent-app-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--ent-text) !important;
+    text-decoration: none !important;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+.ent-app-card:hover {
+    transform: translateY(-5px);
+}
+
+.ent-app-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.ent-app-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   2. THE "SHEET" LAYOUT FOR DETAIL/EDIT VIEWS
+   ========================================================================== */
+html[data-enterprise="true"] #pagecontent {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+html[data-enterprise="true"] .detail.view,
+html[data-enterprise="true"] .edit.view {
+    background-color: var(--ent-sheet-bg) !important;
+    border: 1px solid var(--ent-border) !important;
+    border-radius: var(--ent-radius) !important;
+    box-shadow: var(--ent-shadow) !important;
+    padding: 30px !important;
+    margin-bottom: 20px;
+}
+
+/* Flatten tables inside the sheet */
+html[data-enterprise="true"] .detail.view td,
+html[data-enterprise="true"] .edit.view td {
+    border: none !important;
+    padding: 10px !important;
+    border-bottom: 1px dashed var(--ent-border) !important;
+}
+
+/* Odoo style labels & values */
+html[data-enterprise="true"] td.dataLabel,
+html[data-enterprise="true"] td[scope="row"] {
+    color: var(--ent-text-muted) !important;
+    font-weight: 600 !important;
+    width: 25% !important;
+    vertical-align: top !important;
+    font-size: 13px !important;
+}
+
+html[data-enterprise="true"] td.dataField {
+    color: var(--ent-text) !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+}
+
+/* Remove weird suitecrm headers in views */
+html[data-enterprise="true"] h4.dataLabel {
+    border-bottom: 2px solid var(--ent-border) !important;
+    color: var(--ent-primary) !important;
+    padding-bottom: 8px !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    font-size: 16px !important;
+}
+
+/* Action Status Bar (Top of sheets) */
+html[data-enterprise="true"] .actionsContainer.header {
+    background-color: var(--ent-sheet-bg) !important;
+    border: 1px solid var(--ent-border) !important;
+    border-bottom: none !important;
+    border-radius: var(--ent-radius) var(--ent-radius) 0 0 !important;
+    padding: 10px 20px !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ==========================================================================
+   3. MODERNIZED LIST VIEWS (Tables)
+   ========================================================================== */
+html[data-enterprise="true"] table.list.view {
+    background: var(--ent-sheet-bg) !important;
+    border: 1px solid var(--ent-border) !important;
+    border-radius: var(--ent-radius) !important;
+    box-shadow: var(--ent-shadow) !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+}
+
+html[data-enterprise="true"] table.list.view th {
+    background-color: var(--ent-primary) !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid var(--ent-primary-dark) !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 12px 15px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 12px !important;
+}
+
+/* Force override SuiteCRM specific link classes and ALL nested elements to be white */
+html[data-enterprise="true"] table.list.view th a,
+html[data-enterprise="true"] table.list.view th span,
+html[data-enterprise="true"] table.list.view th div,
+html[data-enterprise="true"] table.list.view th *,
+html[data-enterprise="true"] table.list.view th a.listViewThLinkS1,
+html[data-enterprise="true"] table.list.view th a.listViewThLinkS1:hover,
+html[data-enterprise="true"] table.list.view th a.listViewThLinkS1:link,
+html[data-enterprise="true"] table.list.view th a.listViewThLinkS1:visited {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+html[data-enterprise="true"] table.list.view td {
+    padding: 12px 15px !important;
+    border-bottom: 1px solid var(--ent-border) !important;
+    border-left: none !important;
+    border-right: none !important;
+    vertical-align: middle !important;
+}
+
+html[data-enterprise="true"] table.list.view tr:hover td {
+    background-color: rgba(0,0,0,0.02) !important;
+}
+
+/* Checkboxes */
+html[data-enterprise="true"] table.list.view input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   4. BUTTONS & INPUTS (Scoped to prevent breaking Navbar)
+   ========================================================================== */
+html[data-enterprise="true"] .edit.view input.button[type="submit"],
+html[data-enterprise="true"] .edit.view input.button[type="button"],
+html[data-enterprise="true"] .detail.view input.button,
+html[data-enterprise="true"] .list.view input.button,
+html[data-enterprise="true"] #search_form input.button,
+html[data-enterprise="true"] .ui-dialog input.button,
+html[data-enterprise="true"] .dashletPanel input.button,
+html[data-enterprise="true"] .btn-primary:not(.navbar-btn) {
+    background-color: var(--ent-secondary) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding: 6px 14px !important;
+    font-weight: 500 !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+    transition: background 0.2s;
+}
+
+html[data-enterprise="true"] .edit.view input.button[type="submit"]:hover,
+html[data-enterprise="true"] .edit.view input.button[type="button"]:hover,
+html[data-enterprise="true"] .detail.view input.button:hover,
+html[data-enterprise="true"] .list.view input.button:hover,
+html[data-enterprise="true"] #search_form input.button:hover,
+html[data-enterprise="true"] .ui-dialog input.button:hover,
+html[data-enterprise="true"] .dashletPanel input.button:hover {
+    background-color: var(--ent-secondary-dark) !important;
+}
+
+/* Secondary Buttons */
+html[data-enterprise="true"] .edit.view input.button.clear,
+html[data-enterprise="true"] .detail.view input.button.clear,
+html[data-enterprise="true"] .list.view input.button.clear,
+html[data-enterprise="true"] #search_form input.button.clear,
+html[data-enterprise="true"] .ui-dialog input.button.clear,
+html[data-enterprise="true"] .dashletPanel input.button.clear {
+    background-color: #fff !important;
+    color: var(--ent-text) !important;
+    border: 1px solid var(--ent-border) !important;
+}
+html[data-enterprise="true"] .edit.view input.button.clear:hover,
+html[data-enterprise="true"] .detail.view input.button.clear:hover,
+html[data-enterprise="true"] .list.view input.button.clear:hover,
+html[data-enterprise="true"] #search_form input.button.clear:hover,
+html[data-enterprise="true"] .ui-dialog input.button.clear:hover,
+html[data-enterprise="true"] .dashletPanel input.button.clear:hover {
+    background-color: #f1f1f1 !important;
+}
+
+/* Forms */
+html[data-enterprise="true"] .edit.view input[type="text"],
+html[data-enterprise="true"] .edit.view input[type="password"],
+html[data-enterprise="true"] .edit.view select,
+html[data-enterprise="true"] .edit.view textarea,
+html[data-enterprise="true"] .detail.view input[type="text"],
+html[data-enterprise="true"] .detail.view select,
+html[data-enterprise="true"] .detail.view textarea,
+html[data-enterprise="true"] #search_form input[type="text"],
+html[data-enterprise="true"] #search_form select,
+html[data-enterprise="true"] .ui-dialog input[type="text"],
+html[data-enterprise="true"] .ui-dialog select,
+html[data-enterprise="true"] .dashletPanel input[type="text"],
+html[data-enterprise="true"] .dashletPanel select {
+    border: 1px solid var(--ent-border) !important;
+    border-radius: 3px !important;
+    padding: 6px 10px !important;
+    background-color: var(--ent-sheet-bg) !important;
+    color: var(--ent-text) !important;
+    box-shadow: none !important;
+    transition: border-color 0.2s !important;
+}
+html[data-enterprise="true"] .edit.view input[type="text"]:focus,
+html[data-enterprise="true"] #search_form input[type="text"]:focus,
+html[data-enterprise="true"] .ui-dialog input[type="text"]:focus,
+html[data-enterprise="true"] .dashletPanel input[type="text"]:focus {
+    border-color: var(--ent-secondary) !important;
+    outline: none !important;
+}
+
+/* ==========================================================================
+   5. DASHBOARDS & SUBPANELS
+   ========================================================================== */
+html[data-enterprise="true"] .dashletPanel {
+    background: var(--ent-sheet-bg) !important;
+    border: 1px solid var(--ent-border) !important;
+    border-radius: var(--ent-radius) !important;
+    box-shadow: var(--ent-shadow) !important;
+    margin-bottom: 20px !important;
+}
+
+html[data-enterprise="true"] .dashletHeader {
+    background: transparent !important;
+    border-bottom: 1px solid var(--ent-border) !important;
+    padding: 15px !important;
+}
+html[data-enterprise="true"] .dashletTitle h3 {
+    font-size: 15px !important;
+    color: var(--ent-primary) !important;
+    font-weight: 600 !important;
+}
+
+/* Subpanels */
+html[data-enterprise="true"] .subpanel-set .list.view {
+    border-top: none !important;
+    box-shadow: none !important;
+}
+html[data-enterprise="true"] .subpanel-set {
+    margin-top: 30px !important;
+}
+html[data-enterprise="true"] .subpanel-set h3 {
+    color: var(--ent-primary) !important;
+    border-bottom: 2px solid var(--ent-primary) !important;
+    padding-bottom: 5px !important;
+    display: inline-block !important;
+}
+
+/* ==========================================================================
+   6. DARK MODE SYNERGY
+   ========================================================================== */
+html[data-theme="dark"][data-enterprise="true"] {
+    --ent-sheet-bg: var(--tblr-bg-surface-dark);
+    --ent-bg: #1e1e1e;
+    --ent-border: var(--tblr-border-color);
+    --ent-text: var(--tblr-body-color);
+    --ent-text-muted: var(--tblr-muted);
+}
+
+html[data-theme="dark"][data-enterprise="true"] .ent-app-card {
+    color: #fff !important;
+}
+
+html[data-theme="dark"][data-enterprise="true"] table.list.view th {
+    background-color: rgba(255,255,255,0.02) !important;
+}
+
+html[data-theme="dark"][data-enterprise="true"] table.list.view tr:hover td {
+    background-color: rgba(255,255,255,0.05) !important;
+}
+
+html[data-theme="dark"][data-enterprise="true"] table.list.view th a,
+html[data-theme="dark"][data-enterprise="true"] table.list.view th span,
+html[data-theme="dark"][data-enterprise="true"] table.list.view th div,
+html[data-theme="dark"][data-enterprise="true"] table.list.view th *,
+html[data-theme="dark"][data-enterprise="true"] table.list.view th a.listViewThLinkS1,
+html[data-theme="dark"][data-enterprise="true"] table.list.view th a.listViewThLinkS1:hover,
+html[data-theme="dark"][data-enterprise="true"] table.list.view th a.listViewThLinkS1:link,
+html[data-theme="dark"][data-enterprise="true"] table.list.view th a.listViewThLinkS1:visited {
+    color: #e0e0e0 !important;
+}
+
+html[data-theme="dark"][data-enterprise="true"] input[type="text"],
+html[data-theme="dark"][data-enterprise="true"] select {
+    background-color: rgba(0,0,0,0.2) !important;
+}

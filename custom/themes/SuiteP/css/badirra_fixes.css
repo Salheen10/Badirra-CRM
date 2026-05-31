@@ -1,0 +1,713 @@
+/* Badirra CRM Safe UI Overrides */
+
+/* 1. Force the Navbar Icons Background to be completely transparent */
+.navbar-inverse .globalLinks-desktop .user-menu-button,
+.navbar-inverse .globalLinks-desktop .usermenu a,
+.navbar-inverse .desktop_notifications .alertsButton,
+.navbar-inverse .usermenu a,
+.usermenu a,
+.usermenucollapsed.btn-default,
+.usermenu {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure the icons themselves stay pure white ONLY IN DARK MODE */
+html[data-theme="dark"] .globalLinks-desktop .suitepicon,
+html[data-theme="dark"] .globalLinks-desktop .glyphicon,
+html[data-theme="dark"] .globalLinks-desktop a,
+html[data-theme="dark"] .desktop_notifications .alertsButton .suitepicon {
+    color: #ffffff !important;
+}
+
+/* 2. Fix "Recently Viewed" Subtitle Colors to be visible on white background */
+.dropdown-menu li.recent-links-title a,
+.dropdown-menu li.favorite-links-title a,
+.dropdown-menu li.action-links-title a,
+.recent_h3,
+#recentlyViewedSidebar h2,
+.recentlyViewedSidebar h2 {
+    color: #182433 !important;
+    font-weight: 600 !important;
+}
+
+/* 3. Global Typography Enforcement */
+body, p, h1, h2, h3, h4, h5, h6, input, button, select, textarea, table, td, th, div, a {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Protect icon fonts from being overridden by the global rule */
+.suitepicon { font-family: 'suitepicon' !important; }
+.glyphicon { font-family: 'Glyphicons Halflings' !important; }
+.fa { font-family: 'FontAwesome' !important; }
+
+/* ==========================================================================
+   4. PREMIUM DARK MODE THEME ENGINE
+   ========================================================================== */
+:root[data-theme="dark"] {
+    --badirra-bg-body: #121212;
+    --badirra-bg-surface: #1e1e1e;
+    --badirra-bg-surface-hover: #2d2d2d;
+    --badirra-text-primary: #e0e0e0;
+    --badirra-text-secondary: #aaaaaa;
+    --badirra-border: #333333;
+    --badirra-accent: #3b82f6;
+    --badirra-input-bg: #121212;
+    --badirra-table-stripe: rgba(255,255,255,0.03);
+}
+
+/* Base Overrides */
+html[data-theme="dark"], html[data-theme="dark"] body,
+html[data-theme="dark"] #bootstrap-container,
+html[data-theme="dark"] #content,
+html[data-theme="dark"] .main-pane,
+html[data-theme="dark"] .p_login {
+    background-color: var(--badirra-bg-body) !important;
+    color: var(--badirra-text-primary) !important;
+}
+
+/* Typography Overrides */
+html[data-theme="dark"] h1, 
+html[data-theme="dark"] h2, 
+html[data-theme="dark"] h3, 
+html[data-theme="dark"] h4, 
+html[data-theme="dark"] h5, 
+html[data-theme="dark"] h6,
+html[data-theme="dark"] p,
+html[data-theme="dark"] label,
+html[data-theme="dark"] td,
+html[data-theme="dark"] span:not(.suitepicon) {
+    color: var(--badirra-text-primary) !important;
+}
+
+/* Links */
+html[data-theme="dark"] a:not(.btn):not(.nav-link):not(.utilsLink) {
+    color: var(--badirra-accent) !important;
+}
+
+/* Layout Panels & Sidebar */
+html[data-theme="dark"] #sidebar,
+html[data-theme="dark"] .sidebar_container {
+    background-color: var(--badirra-bg-surface) !important;
+    border-right: 1px solid var(--badirra-border) !important;
+}
+html[data-theme="dark"] .navbar-inverse {
+    background-color: var(--badirra-bg-surface) !important;
+    border-bottom: 1px solid var(--badirra-border) !important;
+}
+
+/* Dashboard & Cards */
+html[data-theme="dark"] .dashletPanel,
+html[data-theme="dark"] .panel-default,
+html[data-theme="dark"] .card {
+    background-color: var(--badirra-bg-surface) !important;
+    border: 1px solid var(--badirra-border) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5) !important;
+}
+html[data-theme="dark"] .dashletPanelMenu {
+    background-color: var(--badirra-bg-surface) !important;
+    border-bottom: 1px solid var(--badirra-border) !important;
+}
+html[data-theme="dark"] .h3Row {
+    background-color: var(--badirra-bg-surface) !important;
+    border-bottom: 1px solid var(--badirra-border) !important;
+}
+
+/* Forms & Inputs */
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="password"],
+html[data-theme="dark"] input[type="email"],
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background-color: var(--badirra-input-bg) !important;
+    color: var(--badirra-text-primary) !important;
+    border: 1px solid var(--badirra-border) !important;
+}
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] select:focus,
+html[data-theme="dark"] textarea:focus {
+    border-color: var(--badirra-accent) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Tables */
+html[data-theme="dark"] .list.view,
+html[data-theme="dark"] .detail.view,
+html[data-theme="dark"] .edit.view,
+html[data-theme="dark"] table.table {
+    background-color: var(--badirra-bg-surface) !important;
+    border: 1px solid var(--badirra-border) !important;
+}
+html[data-theme="dark"] table th,
+html[data-theme="dark"] table.list.view th {
+    background-color: var(--badirra-bg-surface-hover) !important;
+    color: var(--badirra-text-primary) !important;
+    border-bottom: 1px solid var(--badirra-border) !important;
+}
+html[data-theme="dark"] table td {
+    border-top: 1px solid var(--badirra-border) !important;
+}
+html[data-theme="dark"] table.list.view tr.evenListRowS1,
+html[data-theme="dark"] table.list.view tr.oddListRowS1 {
+    background-color: var(--badirra-bg-surface) !important;
+}
+html[data-theme="dark"] table.list.view tr.oddListRowS1:hover,
+html[data-theme="dark"] table.list.view tr.evenListRowS1:hover {
+    background-color: var(--badirra-bg-surface-hover) !important;
+}
+html[data-theme="dark"] table tbody tr {
+    background-color: var(--badirra-bg-surface) !important;
+}
+
+/* Dropdowns & Modals */
+html[data-theme="dark"] .dropdown-menu,
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .yui-panel {
+    background-color: var(--badirra-bg-surface) !important;
+    border: 1px solid var(--badirra-border) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+}
+html[data-theme="dark"] .dropdown-menu > li > a {
+    color: var(--badirra-text-primary) !important;
+}
+html[data-theme="dark"] .dropdown-menu > li > a:hover {
+    background-color: var(--badirra-bg-surface-hover) !important;
+}
+
+/* Action Menus & Detail Panels */
+html[data-theme="dark"] .panel-content,
+html[data-theme="dark"] .panel-body {
+    background-color: var(--badirra-bg-surface) !important;
+}
+html[data-theme="dark"] .tab-content {
+    background-color: var(--badirra-bg-surface) !important;
+    border: 1px solid var(--badirra-border) !important;
+}
+
+/* Buttons */
+html[data-theme="dark"] .btn-default,
+html[data-theme="dark"] .button {
+    background-color: var(--badirra-bg-surface-hover) !important;
+    color: var(--badirra-text-primary) !important;
+    border-color: var(--badirra-border) !important;
+}
+html[data-theme="dark"] .btn-default:hover,
+html[data-theme="dark"] .button:hover {
+    background-color: var(--badirra-border) !important;
+}
+
+/* Tabs */
+html[data-theme="dark"] .nav-tabs > li > a {
+    background-color: var(--badirra-bg-surface-hover) !important;
+    border-color: var(--badirra-border) !important;
+    color: var(--badirra-text-secondary) !important;
+}
+html[data-theme="dark"] .nav-tabs > li.active > a {
+    background-color: var(--badirra-bg-surface) !important;
+    border-bottom-color: transparent !important;
+    color: var(--badirra-text-primary) !important;
+}
+
+/* Pagination & Utils */
+html[data-theme="dark"] .pagination > li > a {
+    background-color: var(--badirra-bg-surface-hover) !important;
+    border-color: var(--badirra-border) !important;
+    color: var(--badirra-text-primary) !important;
+}
+html[data-theme="dark"] .utilsLink {
+    color: var(--badirra-text-primary) !important;
+}
+
+/* Search bar header */
+html[data-theme="dark"] #searchformdropdown .input-group input,
+html[data-theme="dark"] #searchform .input-group input {
+    background-color: var(--badirra-bg-surface-hover) !important;
+    color: var(--badirra-text-primary) !important;
+    border-color: transparent !important;
+}
+
+/* Subpanels header */
+html[data-theme="dark"] .subpanel-header {
+    background-color: var(--badirra-bg-surface-hover) !important;
+    border-color: var(--badirra-border) !important;
+}
+
+/* Recently Viewed / Sidebar links */
+html[data-theme="dark"] .dropdown-menu li.recent-links-title a,
+html[data-theme="dark"] .dropdown-menu li.favorite-links-title a,
+html[data-theme="dark"] .dropdown-menu li.action-links-title a,
+html[data-theme="dark"] .recent_h3,
+html[data-theme="dark"] #recentlyViewedSidebar h2,
+html[data-theme="dark"] .recentlyViewedSidebar h2 {
+    color: var(--badirra-text-primary) !important;
+}
+
+/* Dashboard Headers */
+html[data-theme="dark"] .dashlet-title,
+html[data-theme="dark"] .dashlet-title h3,
+html[data-theme="dark"] .dashlet-title span,
+html[data-theme="dark"] .dashlet-title a {
+    color: var(--badirra-text-primary) !important;
+}
+
+/* Header Links */
+html[data-theme="dark"] .globalLinks-desktop .user-menu-button {
+    color: var(--badirra-text-primary) !important;
+}
+/* 
+ * Admin Dashboard - Tabler Simulator 
+ * We scope all of this inside .admin-dashboard to avoid breaking legacy SuiteCRM layouts
+ */
+.admin-dashboard {
+    font-family: 'Inter', sans-serif;
+    color: #1d273b;
+    padding: 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Grid System */
+.admin-dashboard .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+.admin-dashboard .row-cards {
+    gap: 1rem 0; /* Add vertical gap between rows */
+}
+.admin-dashboard .col-sm-6, 
+.admin-dashboard .col-md-6, 
+.admin-dashboard .col-lg-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+}
+@media (min-width: 576px) {
+    .admin-dashboard .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+}
+@media (min-width: 768px) {
+    .admin-dashboard .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+}
+@media (min-width: 992px) {
+    .admin-dashboard .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+}
+
+/* Flexbox Utilities */
+.admin-dashboard .d-flex { display: flex !important; }
+.admin-dashboard .flex-column { flex-direction: column !important; }
+.admin-dashboard .flex-fill { flex: 1 1 auto !important; }
+.admin-dashboard .flex-grow-1 { flex-grow: 1 !important; }
+.admin-dashboard .flex-shrink-0 { flex-shrink: 0 !important; }
+.admin-dashboard .align-items-center { align-items: center !important; }
+.admin-dashboard .align-items-start { align-items: flex-start !important; }
+.admin-dashboard .h-100 { height: 100% !important; }
+
+/* Spacing Utilities */
+.admin-dashboard .mb-5 { margin-bottom: 3rem !important; }
+.admin-dashboard .mb-4 { margin-bottom: 1.5rem !important; }
+.admin-dashboard .mb-3 { margin-bottom: 1rem !important; }
+.admin-dashboard .mb-1 { margin-bottom: 0.25rem !important; }
+.admin-dashboard .mb-0 { margin-bottom: 0 !important; }
+.admin-dashboard .pb-2 { padding-bottom: 0.5rem !important; }
+.admin-dashboard .me-3 { margin-right: 1rem !important; }
+.admin-dashboard .px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+.admin-dashboard .py-3 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+
+/* Borders & Shadows */
+.admin-dashboard .border-bottom { border-bottom: 1px solid #e6e8eb !important; }
+.admin-dashboard .border-0 { border: 0 !important; }
+.admin-dashboard .shadow-sm { box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important; }
+.admin-dashboard .rounded { border-radius: 4px !important; }
+
+/* Typography */
+.admin-dashboard .font-weight-bold { font-weight: 600 !important; }
+.admin-dashboard .text-primary { color: #206bc4 !important; }
+.admin-dashboard .text-muted { color: #667382 !important; }
+.admin-dashboard .small { font-size: 0.875em; }
+
+/* Custom Admin Elements */
+.admin-dashboard .admin-group-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1d273b;
+}
+.admin-dashboard .admin-group-header h3 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+.admin-dashboard .admin-group-header p {
+    margin: 0;
+}
+
+/* Card Styling */
+.admin-dashboard .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e8eb;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.admin-dashboard .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.admin-dashboard .card-link-pop:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    text-decoration: none;
+}
+.admin-dashboard .card-link-pop:hover h3.card-title {
+    text-decoration: underline;
+}
+
+/* Avatar & Icons */
+.admin-dashboard .avatar {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgba(32, 107, 196, 0.1); /* Primary-lt */
+    color: #206bc4;
+}
+.admin-dashboard .avatar .suitepicon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Desc */
+.admin-dashboard .admin-desc {
+    line-height: 1.5;
+}
+
+/* Links */
+.admin-dashboard a, .admin-dashboard a:hover {
+    text-decoration: none;
+}
+
+/* Dark Mode Overrides */
+[data-bs-theme="dark"] .admin-dashboard {
+    color: #f8fafc;
+}
+[data-bs-theme="dark"] .admin-dashboard .admin-group-header {
+    color: #f8fafc;
+}
+[data-bs-theme="dark"] .admin-dashboard .border-bottom {
+    border-bottom: 1px solid #334155 !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .card {
+    background-color: #1e293b;
+    border: 1px solid #334155 !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .card-title {
+    color: #38bdf8 !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .text-muted {
+    color: #94a3b8 !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .avatar {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+/* 
+ * Admin Dashboard - Tabler Simulator 
+ * We scope all of this inside .admin-dashboard to avoid breaking legacy SuiteCRM layouts
+ */
+.admin-dashboard {
+    font-family: 'Inter', sans-serif;
+    color: #1d273b;
+    padding: 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Grid System */
+.admin-dashboard .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+.admin-dashboard .row-cards {
+    gap: 1rem 0; /* Add vertical gap between rows */
+}
+.admin-dashboard .col-sm-6, 
+.admin-dashboard .col-md-6, 
+.admin-dashboard .col-lg-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+}
+@media (min-width: 576px) {
+    .admin-dashboard .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+}
+@media (min-width: 768px) {
+    .admin-dashboard .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+}
+@media (min-width: 992px) {
+    .admin-dashboard .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+}
+
+/* Flexbox Utilities */
+.admin-dashboard .d-flex { display: flex !important; }
+.admin-dashboard .flex-column { flex-direction: column !important; }
+.admin-dashboard .flex-fill { flex: 1 1 auto !important; }
+.admin-dashboard .flex-grow-1 { flex-grow: 1 !important; }
+.admin-dashboard .flex-shrink-0 { flex-shrink: 0 !important; }
+.admin-dashboard .align-items-center { align-items: center !important; }
+.admin-dashboard .align-items-start { align-items: flex-start !important; }
+.admin-dashboard .h-100 { height: 100% !important; }
+
+/* Spacing Utilities */
+.admin-dashboard .mb-5 { margin-bottom: 3rem !important; }
+.admin-dashboard .mb-4 { margin-bottom: 1.5rem !important; }
+.admin-dashboard .mb-3 { margin-bottom: 1rem !important; }
+.admin-dashboard .mb-1 { margin-bottom: 0.25rem !important; }
+.admin-dashboard .mb-0 { margin-bottom: 0 !important; }
+.admin-dashboard .pb-2 { padding-bottom: 0.5rem !important; }
+.admin-dashboard .me-3 { margin-right: 1rem !important; }
+.admin-dashboard .px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+.admin-dashboard .py-3 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+
+/* Borders & Shadows */
+.admin-dashboard .border-bottom { border-bottom: 1px solid #e6e8eb !important; }
+.admin-dashboard .border-0 { border: 0 !important; }
+.admin-dashboard .shadow-sm { box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important; }
+.admin-dashboard .rounded { border-radius: 4px !important; }
+
+/* Typography */
+.admin-dashboard .font-weight-bold { font-weight: 600 !important; }
+.admin-dashboard .text-primary { color: #206bc4 !important; }
+.admin-dashboard .text-muted { color: #667382 !important; }
+.admin-dashboard .small { font-size: 0.875em; }
+
+/* Custom Admin Elements */
+.admin-dashboard .admin-group-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1d273b;
+}
+.admin-dashboard .admin-group-header h3 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+.admin-dashboard .admin-group-header p {
+    margin: 0;
+}
+
+/* Card Styling */
+.admin-dashboard .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e8eb;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.admin-dashboard .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.admin-dashboard .card-link-pop:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    text-decoration: none;
+}
+.admin-dashboard .card-link-pop:hover h3.card-title {
+    text-decoration: underline;
+}
+
+/* Avatar & Icons */
+.admin-dashboard .avatar {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgba(32, 107, 196, 0.1); /* Primary-lt */
+    color: #206bc4;
+}
+.admin-dashboard .avatar .suitepicon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Desc */
+.admin-dashboard .admin-desc {
+    line-height: 1.5;
+}
+
+/* Links */
+.admin-dashboard a, .admin-dashboard a:hover {
+    text-decoration: none;
+}
+
+/* Dark Mode Overrides */
+[data-bs-theme="dark"] .admin-dashboard {
+    color: #f8fafc;
+}
+[data-bs-theme="dark"] .admin-dashboard .admin-group-header {
+    color: #f8fafc;
+}
+[data-bs-theme="dark"] .admin-dashboard .border-bottom {
+    border-bottom: 1px solid #334155 !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .card {
+    background-color: #1e293b;
+    border: 1px solid #334155 !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .card-title {
+    color: #38bdf8 !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .text-muted {
+    color: #94a3b8 !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .avatar {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+}
+[data-bs-theme="dark"] .admin-dashboard .card-link-pop:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+}
+/* ==========================================================================
+   5. SYSTEM-WIDE RESPONSIVE DESIGN ENGINE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    
+    /* Global Container Adjustments */
+    #content, .main-pane, #bootstrap-container {
+        padding: 0 5px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Detail & Edit View Forms (Stacking the 4-column tables) */
+    table.detail.view, 
+    table.edit.view,
+    table.detail.view tbody, 
+    table.edit.view tbody,
+    table.detail.view tr, 
+    table.edit.view tr,
+    table.detail.view td, 
+    table.edit.view td,
+    table.detail.view th, 
+    table.edit.view th {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Form Labels & Fields Formatting */
+    table.detail.view td[scope="row"],
+    table.edit.view td[scope="row"],
+    table.detail.view td[valign="top"]:not([data-field]),
+    table.edit.view td[valign="top"]:not([data-field]),
+    table.detail.view th[scope="row"],
+    table.edit.view th[scope="row"] {
+        padding-top: 15px !important;
+        padding-bottom: 5px !important;
+        font-weight: bold !important;
+        border-bottom: none !important;
+        background-color: transparent !important;
+        text-align: left !important;
+        min-width: 100% !important;
+    }
+    
+    /* RTL Support for Labels */
+    html[dir="rtl"] table.detail.view td[scope="row"],
+    html[dir="rtl"] table.edit.view td[scope="row"],
+    html[dir="rtl"] table.detail.view td[valign="top"]:not([data-field]),
+    html[dir="rtl"] table.edit.view td[valign="top"]:not([data-field]) {
+        text-align: right !important;
+    }
+
+    table.detail.view td[data-field],
+    table.edit.view td[data-field],
+    table.detail.view td[scope="col"],
+    table.edit.view td[scope="col"] {
+        padding-top: 5px !important;
+        padding-bottom: 15px !important;
+        border-bottom: 1px solid #e6e8eb !important;
+    }
+
+    html[data-theme="dark"] table.detail.view td[data-field],
+    html[data-theme="dark"] table.edit.view td[data-field],
+    html[data-theme="dark"] table.detail.view td[scope="col"],
+    html[data-theme="dark"] table.edit.view td[scope="col"] {
+        border-bottom: 1px solid #333333 !important;
+    }
+
+    /* Input Fields full width */
+    table.edit.view input[type="text"],
+    table.edit.view input[type="password"],
+    table.edit.view input[type="email"],
+    table.edit.view select,
+    table.edit.view textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* List Views & Subpanels (Horizontal Scrolling) */
+    .list-view-rounded,
+    table.list.view,
+    .subpanel-list {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        white-space: nowrap !important;
+    }
+
+    /* Dashlets / Home Page */
+    .dashletPanel {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Dialogs & Modals */
+    .yui-panel, .modal-dialog, #searchformdropdown {
+        width: 95% !important;
+        left: 2.5% !important;
+        margin: 0 !important;
+    }
+
+    /* Header & Navigation fixes for mobile */
+    .navbar-inverse .navbar-header {
+        width: 100% !important;
+    }
+    
+    /* Administration Panel Mobile Stack */
+    .admin-dashboard .col-sm-6, 
+    .admin-dashboard .col-md-6, 
+    .admin-dashboard .col-lg-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+}

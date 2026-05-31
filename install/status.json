@@ -1,0 +1,1 @@
+{"message":"Configuration relationships...[ok]<br>Create database...[ok]<br>Create default settings...[ok]<br>[ok]<br>","command":{"function":"redirect","arguments":"\/\/localhost:8080\/index.php?goto=SilentInstall&cli=true"}}

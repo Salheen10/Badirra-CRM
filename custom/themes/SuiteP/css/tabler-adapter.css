@@ -1,0 +1,200 @@
+/* ============================================================================
+   Badirra CRM — Tabler UI Adapter
+   Maps legacy SuiteCRM / Bootstrap 3 classes to Tabler UI styling
+   ============================================================================ */
+
+/* 1. Typography & Base */
+body {
+    background-color: var(--tblr-bg-surface-secondary);
+    color: var(--tblr-body-color);
+}
+a {
+    color: var(--tblr-primary);
+}
+a:hover {
+    color: var(--tblr-primary-hover);
+    text-decoration: none;
+}
+
+/* 2. Top Navigation (Navbar) */
+.navbar-inverse {
+    background-color: var(--tblr-bg-surface) !important;
+    border-bottom: 1px solid var(--tblr-border-color) !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: var(--tblr-gray-600) !important;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: var(--tblr-primary) !important;
+}
+.currentTab a {
+    color: var(--tblr-primary) !important;
+    font-weight: 600;
+}
+
+/* 3. Sidebar */
+.sidebar {
+    background-color: var(--tblr-bg-surface) !important;
+    border-right: 1px solid var(--tblr-border-color) !important;
+}
+.sidebar a {
+    color: var(--tblr-gray-600) !important;
+    border-radius: var(--tblr-border-radius);
+    margin: 2px 8px !important;
+}
+.sidebar a:hover, .sidebar .active > a {
+    background-color: var(--tblr-primary-lt) !important;
+    color: var(--tblr-primary) !important;
+}
+
+/* 4. Panels & Dashlets -> Tabler Cards */
+.panel, .dashlet, .contentBox {
+    background: var(--tblr-bg-surface) !important;
+    border: 1px solid var(--tblr-border-color) !important;
+    border-radius: var(--tblr-border-radius) !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 1rem !important;
+}
+.panel-heading, .dashletHeader, .hd {
+    background: transparent !important;
+    border-bottom: 1px solid var(--tblr-border-color) !important;
+    padding: 1rem !important;
+    font-weight: 600 !important;
+}
+.panel-body, .dashletBody, .bd {
+    padding: 1rem !important;
+}
+
+/* 5. Buttons -> Tabler Buttons */
+.btn {
+    display: inline-block;
+    font-weight: var(--tblr-font-weight-medium);
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: var(--tblr-border-radius);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-default, .button, input[type="submit"]:not(.btn-primary) {
+    color: var(--tblr-btn-color);
+    background-color: var(--tblr-btn-bg);
+    border-color: var(--tblr-border-color);
+}
+.btn-default:hover, .button:hover {
+    background-color: var(--tblr-bg-surface-secondary);
+}
+.btn-primary, #bigbutton {
+    color: #fff !important;
+    background-color: var(--tblr-primary) !important;
+    border-color: var(--tblr-primary) !important;
+}
+.btn-primary:hover, #bigbutton:hover {
+    background-color: var(--tblr-primary-hover) !important;
+}
+.btn-danger {
+    color: #fff !important;
+    background-color: var(--tblr-danger) !important;
+}
+.btn-success {
+    color: #fff !important;
+    background-color: var(--tblr-success) !important;
+}
+.btn-warning {
+    color: #fff !important;
+    background-color: var(--tblr-warning) !important;
+}
+
+/* 6. Forms & Inputs */
+input[type="text"], input[type="password"], textarea, select {
+    display: block;
+    width: 100%;
+    padding: 0.5625rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4285714;
+    color: var(--tblr-body-color);
+    background-color: var(--tblr-bg-surface);
+    background-clip: padding-box;
+    border: 1px solid var(--tblr-border-color);
+    border-radius: var(--tblr-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+    color: var(--tblr-body-color);
+    background-color: var(--tblr-bg-surface);
+    border-color: 86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(32, 107, 196, 0.25);
+}
+
+/* 7. Tables -> Tabler Tables */
+table.list.view, .listViewBody {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--tblr-body-color);
+    vertical-align: top;
+    border-color: var(--tblr-border-color);
+}
+table th, .listViewThS1 {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--tblr-border-color) !important;
+    background-color: var(--tblr-bg-surface) !important;
+    color: var(--tblr-gray-500) !important;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--tblr-border-color) !important;
+    vertical-align: middle;
+}
+.oddListRowS1 { background-color: var(--tblr-bg-surface); }
+.evenListRowS1 { background-color: var(--tblr-bg-surface-secondary); }
+.oddListRowS1:hover, .evenListRowS1:hover { background-color: var(--tblr-primary-lt) !important; }
+
+/* 8. Tabs */
+.nav-tabs {
+    border-bottom: 1px solid var(--tblr-border-color) !important;
+}
+.nav-tabs > li > a {
+    color: var(--tblr-gray-600) !important;
+    border: none !important;
+    padding: 0.75rem 1rem !important;
+}
+.nav-tabs > li > a:hover {
+    color: var(--tblr-primary) !important;
+    border-bottom: 2px solid var(--tblr-primary-lt) !important;
+}
+.nav-tabs > li.active > a {
+    color: var(--tblr-primary) !important;
+    border-bottom: 2px solid var(--tblr-primary) !important;
+    font-weight: 600;
+}
+
+/* 9. Dropdowns */
+.dropdown-menu {
+    background-color: var(--tblr-bg-surface);
+    border-color: var(--tblr-border-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: var(--tblr-border-radius);
+}
+.dropdown-menu > li > a {
+    color: var(--tblr-body-color);
+    padding: 0.5rem 1rem;
+}
+.dropdown-menu > li > a:hover {
+    background-color: var(--tblr-primary-lt);
+    color: var(--tblr-primary);
+}
+
+/* 10. Fixes */
+.main { background-color: transparent !important; }
+#content { padding: 1rem; }

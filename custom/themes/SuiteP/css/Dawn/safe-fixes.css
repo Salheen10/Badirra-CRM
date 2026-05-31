@@ -1,0 +1,45 @@
+/* Badirra CRM Safe UI Overrides */
+
+/* 1. Force the Navbar Icons Background to be completely transparent */
+.navbar-inverse .globalLinks-desktop .user-menu-button,
+.navbar-inverse .globalLinks-desktop .usermenu a,
+.navbar-inverse .desktop_notifications .alertsButton,
+.navbar-inverse .usermenu a,
+.usermenu a,
+.usermenucollapsed.btn-default,
+.usermenu {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure the icons themselves stay pure white */
+.globalLinks-desktop .suitepicon,
+.globalLinks-desktop .glyphicon,
+.globalLinks-desktop a,
+.desktop_notifications .alertsButton .suitepicon {
+    color: #ffffff !important;
+}
+
+/* 2. Fix "Recently Viewed" Subtitle Colors to be visible on white background */
+.dropdown-menu li.recent-links-title a,
+.dropdown-menu li.favorite-links-title a,
+.dropdown-menu li.action-links-title a,
+.recent_h3,
+#recentlyViewedSidebar h2,
+.recentlyViewedSidebar h2 {
+    color: #182433 !important;
+    font-weight: 600 !important;
+}
+
+/* 3. Global Typography Enforcement */
+body, p, h1, h2, h3, h4, h5, h6, input, button, select, textarea, table, td, th, div, a {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Protect icon fonts from being overridden by the global rule */
+.suitepicon { font-family: 'suitepicon' !important; }
+.glyphicon { font-family: 'Glyphicons Halflings' !important; }
+.fa { font-family: 'FontAwesome' !important; }
+

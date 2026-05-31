@@ -20,4 +20,3 @@ Dockerfile
 !auto_install/*.zip
 
 config.php
-config_override.php
