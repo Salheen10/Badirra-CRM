@@ -739,6 +739,28 @@ if (is_countable($bottle) && count($bottle) > 0) {
 }
 installerHook('post_installModules');
 
+// --- BADIRRA CRM AUTO-INSTALL DEFAULT MODULES ---
+if (file_exists('auto_install/ar_SuiteCRM_lang_7.15.zip') || file_exists('auto_install/SuiteEstate_Growth_CRM_Free.zip')) {
+    require_once('ModuleInstall/ModuleInstaller.php');
+    if(file_exists('auto_install/ar_SuiteCRM_lang_7.15.zip')) {
+        try {
+            $mi = new ModuleInstaller();
+            $mi->silent = true;
+            $mi->install('auto_install/ar_SuiteCRM_lang_7.15.zip');
+            // Force Arabic as the default language
+            file_put_contents('config_override.php', "\n\$sugar_config['default_language'] = 'ar_AE';\n", FILE_APPEND);
+        } catch (Exception $e) { installLog("Error auto-installing Arabic: " . $e->getMessage()); }
+    }
+    if(file_exists('auto_install/SuiteEstate_Growth_CRM_Free.zip')) {
+        try {
+            $mi2 = new ModuleInstaller();
+            $mi2->silent = true;
+            $mi2->install('auto_install/SuiteEstate_Growth_CRM_Free.zip');
+        } catch (Exception $e) { installLog("Error auto-installing Enterprise Module: " . $e->getMessage()); }
+    }
+}
+// ------------------------------------------------
+
 $out =<<<EOQ
 <br><p><b>{$mod_strings['LBL_PERFORM_OUTRO_1']} {$setup_sugar_version} {$mod_strings['LBL_PERFORM_OUTRO_2']}</b></p>
 
