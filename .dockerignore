@@ -17,3 +17,4 @@ Dockerfile
 *.log
 *.zip
 *.tar.gz
+!auto_install/*.zip
