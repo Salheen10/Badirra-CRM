@@ -741,6 +741,26 @@ installerHook('post_installModules');
 
 // Removed manual installer
 
+// Add EGP, SAR, AED currencies automatically
+installLog('Adding EGP, SAR, and AED default currencies...');
+$currencies_to_add = array(
+    array('name' => 'الجنيه المصري', 'iso4217' => 'EGP', 'symbol' => 'EGP', 'conversion_rate' => 1.0, 'status' => 'Active'),
+    array('name' => 'الريال السعودي', 'iso4217' => 'SAR', 'symbol' => 'SAR', 'conversion_rate' => 1.0, 'status' => 'Active'),
+    array('name' => 'الدرهم الإماراتي', 'iso4217' => 'AED', 'symbol' => 'AED', 'conversion_rate' => 1.0, 'status' => 'Active'),
+);
+foreach ($currencies_to_add as $curr_data) {
+    $curr_obj = new Currency();
+    $curr_obj->retrieve($curr_obj->retrieve_id_by_name($curr_data['name']));
+    if (empty($curr_obj->id)) {
+        $curr_obj->name = $curr_data['name'];
+        $curr_obj->iso4217 = $curr_data['iso4217'];
+        $curr_obj->symbol = $curr_data['symbol'];
+        $curr_obj->conversion_rate = $curr_data['conversion_rate'];
+        $curr_obj->status = $curr_data['status'];
+        $curr_obj->save();
+    }
+}
+
 $out =<<<EOQ
 <br><p><b>{$mod_strings['LBL_PERFORM_OUTRO_1']} {$setup_sugar_version} {$mod_strings['LBL_PERFORM_OUTRO_2']}</b></p>
 
