@@ -1,0 +1,144 @@
+
+
+/* Administration Page Modernization */
+.admin-dashboard .admin-group-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--tblr-heading-color);
+}
+.admin-dashboard .admin-group-header h3 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+.admin-dashboard .admin-card {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    background-color: var(--tblr-bg-surface);
+}
+.admin-dashboard .admin-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+.admin-dashboard .avatar {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--tblr-primary-rgb), 0.1);
+    color: var(--tblr-primary);
+}
+.admin-dashboard .avatar .suitepicon {
+    font-size: 24px;
+    line-height: 1;
+}
+.admin-dashboard .card-title {
+    font-size: 1.1rem;
+}
+.admin-dashboard .admin-desc {
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Dark mode support for Administration Dashboard */
+[data-bs-theme="dark"] .admin-dashboard .admin-card {
+    background-color: var(--tblr-bg-surface);
+    border: 1px solid var(--tblr-border-color) !important;
+}
+[data-bs-theme="dark"] .admin-dashboard .admin-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+}
+
+/* Administration Page Flex Fixes */
+.admin-dashboard .d-flex { display: flex !important; }
+.admin-dashboard .align-items-start { align-items: flex-start !important; }
+.admin-dashboard .avatar {
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    background-color: rgba(32, 107, 196, 0.1) !important;
+    color: #206bc4 !important;
+    margin-right: 16px !important;
+    flex-shrink: 0 !important;
+}
+.admin-dashboard .avatar .suitepicon {
+    font-size: 24px !important;
+    line-height: 1 !important;
+}
+.admin-dashboard .flex-grow-1 {
+    flex-grow: 1 !important;
+}
+.admin-dashboard .card-title {
+    margin-bottom: 4px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+.admin-dashboard .text-muted {
+    color: #6c757d !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+}
+.admin-dashboard .d-flex { flex-direction: row !important; flex-wrap: nowrap !important; }
+
+/* Global Search Modernization */
+.desktop-bar .search-container form,
+.navbar-search form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2px 10px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.desktop-bar .search-container form:focus-within,
+.navbar-search form:focus-within {
+    background: #ffffff;
+    border-color: var(--tblr-primary);
+    box-shadow: 0 0 0 3px rgba(var(--tblr-primary-rgb), 0.2);
+}
+
+.desktop-bar .search-container input[type="text"],
+.navbar-search input[type="text"] {
+    background: transparent !important;
+    border: none !important;
+    color: #333333 !important; /* Fix white text issue */
+    padding: 6px 12px !important;
+    font-size: 14px;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+[data-bs-theme="dark"] .desktop-bar .search-container input[type="text"],
+[data-bs-theme="dark"] .navbar-search input[type="text"] {
+    color: #e0e0e0 !important;
+}
+
+.desktop-bar .search-container form:focus-within input[type="text"],
+.navbar-search form:focus-within input[type="text"] {
+    width: 300px;
+    color: #1a1a2e !important;
+}
+
+.desktop-bar .search-container .btn,
+.navbar-search .btn {
+    background: transparent !important;
+    border: none !important;
+    color: #666 !important;
+    padding: 0 8px;
+}
+
+.desktop-bar .search-container form:focus-within .btn,
+.navbar-search form:focus-within .btn {
+    color: var(--tblr-primary) !important;
+}
