@@ -739,18 +739,7 @@ if (is_countable($bottle) && count($bottle) > 0) {
 }
 installerHook('post_installModules');
 
-// --- BADIRRA CRM AUTO-INSTALL DEFAULT MODULES ---
-if (is_dir('auto_install/arabic')) {
-    require_once('ModuleInstall/ModuleInstaller.php');
-    try {
-        $mi = new ModuleInstaller();
-        $mi->silent = true;
-        $mi->install('auto_install/arabic');
-        // Force Arabic as the default language
-        file_put_contents('config_override.php', "\n\$sugar_config['default_language'] = 'ar_AE';\n", FILE_APPEND);
-    } catch (Exception $e) { installLog("Error auto-installing Arabic: " . $e->getMessage()); }
-}
-// ------------------------------------------------
+// Removed manual installer
 
 $out =<<<EOQ
 <br><p><b>{$mod_strings['LBL_PERFORM_OUTRO_1']} {$setup_sugar_version} {$mod_strings['LBL_PERFORM_OUTRO_2']}</b></p>
