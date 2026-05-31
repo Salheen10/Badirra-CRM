@@ -744,9 +744,9 @@ installerHook('post_installModules');
 // Add EGP, SAR, AED currencies automatically
 installLog('Adding EGP, SAR, and AED default currencies...');
 $currencies_to_add = array(
-    array('name' => 'الجنيه المصري', 'iso4217' => 'EGP', 'symbol' => 'EGP', 'conversion_rate' => 1.0, 'status' => 'Active'),
-    array('name' => 'الريال السعودي', 'iso4217' => 'SAR', 'symbol' => 'SAR', 'conversion_rate' => 1.0, 'status' => 'Active'),
-    array('name' => 'الدرهم الإماراتي', 'iso4217' => 'AED', 'symbol' => 'AED', 'conversion_rate' => 1.0, 'status' => 'Active'),
+    array('name' => 'Egyptian Pound', 'iso4217' => 'EGP', 'symbol' => 'EGP', 'conversion_rate' => 1.0, 'status' => 'Active'),
+    array('name' => 'Saudi Riyal', 'iso4217' => 'SAR', 'symbol' => 'SAR', 'conversion_rate' => 1.0, 'status' => 'Active'),
+    array('name' => 'UAE Dirham', 'iso4217' => 'AED', 'symbol' => 'AED', 'conversion_rate' => 1.0, 'status' => 'Active'),
 );
 foreach ($currencies_to_add as $curr_data) {
     $curr_obj = new Currency();
