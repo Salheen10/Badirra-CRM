@@ -1,4 +1,4 @@
-FROM php:8.1.29-apache
+FROM php:8.2-apache
 
 # Install dependencies and PHP extensions
 RUN apt-get update -yqq \
