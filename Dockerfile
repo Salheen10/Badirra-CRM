@@ -34,13 +34,20 @@ RUN chown -R www-data:www-data /var/www/html \
 # Configure OPcache
 RUN { \
         echo 'opcache.memory_consumption=256'; \
-        echo 'opcache.interned_strings_buffer=16'; \
-        echo 'opcache.max_accelerated_files=10000'; \
-        echo 'opcache.revalidate_freq=0'; \
+        echo 'opcache.interned_strings_buffer=8'; \
+        echo 'opcache.max_accelerated_files=4000'; \
+        echo 'opcache.revalidate_freq=2'; \
         echo 'opcache.fast_shutdown=1'; \
-        echo 'opcache.enable_cli=1'; \
-        echo 'opcache.save_comments=1'; \
     } > /usr/local/etc/php/conf.d/opcache-recommended.ini
+
+# Configure PHP Limits for SuiteCRM
+RUN { \
+        echo 'memory_limit=512M'; \
+        echo 'upload_max_filesize=100M'; \
+        echo 'post_max_size=100M'; \
+        echo 'max_execution_time=600'; \
+        echo 'date.timezone="UTC"'; \
+    } > /usr/local/etc/php/conf.d/suitecrm-limits.ini
 
 # Use the production php.ini
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
