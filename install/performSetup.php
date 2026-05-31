@@ -740,24 +740,15 @@ if (is_countable($bottle) && count($bottle) > 0) {
 installerHook('post_installModules');
 
 // --- BADIRRA CRM AUTO-INSTALL DEFAULT MODULES ---
-if (is_dir('auto_install/arabic') || is_dir('auto_install/estate')) {
+if (is_dir('auto_install/arabic')) {
     require_once('ModuleInstall/ModuleInstaller.php');
-    if(is_dir('auto_install/arabic')) {
-        try {
-            $mi = new ModuleInstaller();
-            $mi->silent = true;
-            $mi->install('auto_install/arabic');
-            // Force Arabic as the default language
-            file_put_contents('config_override.php', "\n\$sugar_config['default_language'] = 'ar_AE';\n", FILE_APPEND);
-        } catch (Exception $e) { installLog("Error auto-installing Arabic: " . $e->getMessage()); }
-    }
-    if(is_dir('auto_install/estate')) {
-        try {
-            $mi2 = new ModuleInstaller();
-            $mi2->silent = true;
-            $mi2->install('auto_install/estate');
-        } catch (Exception $e) { installLog("Error auto-installing Enterprise Module: " . $e->getMessage()); }
-    }
+    try {
+        $mi = new ModuleInstaller();
+        $mi->silent = true;
+        $mi->install('auto_install/arabic');
+        // Force Arabic as the default language
+        file_put_contents('config_override.php', "\n\$sugar_config['default_language'] = 'ar_AE';\n", FILE_APPEND);
+    } catch (Exception $e) { installLog("Error auto-installing Arabic: " . $e->getMessage()); }
 }
 // ------------------------------------------------
 

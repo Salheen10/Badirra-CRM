@@ -28,8 +28,7 @@ COPY . /var/www/html/
 RUN COMPOSER_ALLOW_SUPERUSER=1 COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --optimize-autoloader --no-interaction
 
 # Extract auto_install modules
-RUN unzip auto_install/ar_SuiteCRM_lang_7.15.zip -d auto_install/arabic \
-    && unzip auto_install/SuiteEstate_Growth_CRM_Free.zip -d auto_install/estate
+RUN unzip auto_install/ar_SuiteCRM_lang_7.15.zip -d auto_install/arabic
 
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/html \
