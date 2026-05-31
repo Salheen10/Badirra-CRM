@@ -1,4 +1,3 @@
 <?php
 $sugar_config['default_language'] = 'ar_AE';
-
-$sugar_config['languages']['ar_AE'] = 'ÇáÚÑÈíÉ';
+$sugar_config['languages']['ar_AE'] = 'Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©';
