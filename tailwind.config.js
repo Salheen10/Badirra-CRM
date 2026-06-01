@@ -2,6 +2,9 @@ const {heroui} = require("@heroui/react");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
   content: [
     "./themes/**/*.tpl",
     "./custom/themes/**/*.tpl",
