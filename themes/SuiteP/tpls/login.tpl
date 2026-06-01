@@ -56,13 +56,13 @@
 
                     <div style="margin-bottom: 1.5rem; text-align: left;">
                         <label style="display: block; font-weight: 500; color: #334155; font-size: 0.95rem; margin-bottom: 0.5rem; font-family: inherit;">Email Address *</label>
-                        <input type="text" style="display: block; width: 100% !important; box-sizing: border-box; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: none; font-family: inherit; font-size: 1rem; color: #334155; background: #fff; transition: border-color 0.15s ease-in-out;" placeholder="you@example.com" required autofocus tabindex="1" id="user_name" name="user_name" value='{$LOGIN_USER_NAME|escape}' autocomplete="off">
+                        <input type="text" style="display: block; width: 100% !important; height: 48px; box-sizing: border-box; padding: 0 1rem; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: none; font-family: inherit; font-size: 1rem; color: #334155; background: #fff; transition: border-color 0.15s ease-in-out;" placeholder="you@example.com" required autofocus tabindex="1" id="user_name" name="user_name" value='{$LOGIN_USER_NAME|escape}' autocomplete="off">
                     </div>
 
                     <div style="margin-bottom: 1.5rem; text-align: left;">
                         <label style="display: block; font-weight: 500; color: #334155; font-size: 0.95rem; margin-bottom: 0.5rem; font-family: inherit;">Password *</label>
-                        <div style="display: flex; align-items: center; border-radius: 8px; border: 1px solid #e2e8f0; background: #fff; width: 100%; box-sizing: border-box; transition: border-color 0.15s ease-in-out;">
-                            <input type="password" style="flex: 1; width: 100% !important; min-width: 0; padding: 0.75rem 1rem; border: none; background: transparent; box-shadow: none; outline: none; font-family: inherit; font-size: 1rem; color: #334155;" placeholder="Enter password" tabindex="2" id="username_password" name="username_password" value='{$LOGIN_PASSWORD}' autocomplete="off">
+                        <div style="display: flex; align-items: center; border-radius: 8px; border: 1px solid #e2e8f0; background: #fff; width: 100%; height: 48px; box-sizing: border-box; transition: border-color 0.15s ease-in-out;">
+                            <input type="password" style="flex: 1; width: 100% !important; min-width: 0; padding: 0 1rem; border: none; background: transparent; box-shadow: none; outline: none; font-family: inherit; font-size: 1rem; color: #334155; height: 100%;" placeholder="Enter password" tabindex="2" id="username_password" name="username_password" value='{$LOGIN_PASSWORD}' autocomplete="off">
                             <span style="padding-right: 1rem; display: flex; align-items: center;">
                                 <a href="javascript:void(0)" title="Toggle password visibility" onclick="var input = document.getElementById('username_password'); input.type = (input.type === 'password') ? 'text' : 'password';" style="color: #64748b; display: flex; text-decoration: none;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" /><path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" /><path d="M3 3l18 18" /></svg>
@@ -74,7 +74,7 @@
                     {if !empty($SELECT_LANGUAGE)}
                     <div style="margin-bottom: 1.5rem; text-align: left;">
                         <label style="display: block; font-weight: 500; color: #334155; font-size: 0.95rem; margin-bottom: 0.5rem; font-family: inherit;">{sugar_translate module="Users" label="LBL_LANGUAGE"}</label>
-                        <select name='login_language' style="display: block; width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #e2e8f0; font-family: inherit; font-size: 1rem; color: #334155; background: #fff;" onchange="switchLanguage(this.value)">
+                        <select name='login_language' style="display: block; width: 100%; height: 48px; box-sizing: border-box; padding: 0 1rem; border-radius: 8px; border: 1px solid #e2e8f0; font-family: inherit; font-size: 1rem; color: #334155; background: #fff;" onchange="switchLanguage(this.value)">
                             {$SELECT_LANGUAGE}
                         </select>
                     </div>
