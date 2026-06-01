@@ -416,15 +416,10 @@ html[data-theme="dark"] .globalLinks-desktop .user-menu-button {
 [data-bs-theme="dark"] .admin-dashboard .card-title {
     color: #38bdf8 !important;
 }
-/* 
- * Admin Dashboard - Tabler Simulator 
- * We scope all of this inside .admin-dashboard to avoid breaking legacy SuiteCRM layouts
- */
-.admin-dashboard {
-    font-family: 'Inter', sans-serif;
-    color: #1d273b;
-    padding: 2rem 1rem;
-    max-width: 1400px;
+/* ==========================================================================
+   5. SYSTEM-WIDE RESPONSIVE DESIGN ENGINE
+   ========================================================================== */
+@media (max-width: 768px) {
     /* Global Container Adjustments */
     #content, .main-pane, #bootstrap-container {
         padding: 0 5px !important;
@@ -528,13 +523,5 @@ html[data-theme="dark"] .globalLinks-desktop .user-menu-button {
     /* Header & Navigation fixes for mobile */
     .navbar-inverse .navbar-header {
         width: 100% !important;
-    }
-    
-    /* Administration Panel Mobile Stack */
-    .admin-dashboard .col-sm-6, 
-    .admin-dashboard .col-md-6, 
-    .admin-dashboard .col-lg-4 {
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
     }
 }
