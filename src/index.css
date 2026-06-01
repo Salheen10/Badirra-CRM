@@ -1,6 +1,14 @@
 @import "tailwindcss/theme"; @import "tailwindcss/utilities"; @source "./**/*.jsx";
 
 @layer utilities {
+    /* Prevent Tailwind from breaking SuiteCRM's Bootstrap collapse */
+    .collapse {
+        visibility: visible !important;
+    }
+    .collapse:not(.in) {
+        display: none !important;
+    }
+
     @keyframes app-pop {
       0% { transform: scale(0.8) translateY(30px); opacity: 0; }
       100% { transform: scale(1) translateY(0); opacity: 1; }
