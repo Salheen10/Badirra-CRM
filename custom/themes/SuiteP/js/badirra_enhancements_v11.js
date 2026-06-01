@@ -119,6 +119,18 @@
       link.id = 'ent-react-css';
       link.href = 'custom/themes/SuiteP/dist/assets/main.css?v=' + new Date().getTime();
       document.head.appendChild(link);
+
+      // CRITICAL FIX: Tailwind v4 generates `.collapse{visibility:collapse}`
+      // which destroys Bootstrap's `.collapse` class used by all SuiteCRM panels.
+      // We inject an override AFTER main.css to guarantee it wins the cascade.
+      var fixStyle = document.createElement('style');
+      fixStyle.id = 'ent-tailwind-collapse-fix';
+      fixStyle.textContent =
+        '.collapse { visibility: visible !important; }' +
+        '.panel-collapse.collapse:not(.in) { display: none !important; visibility: visible !important; }' +
+        '.panel-collapse.collapse.in { display: block !important; visibility: visible !important; }' +
+        '.tab-pane.panel-collapse { visibility: visible !important; }';
+      document.head.appendChild(fixStyle);
     }
     
     // Waffle Icon is now handled entirely via CSS replacing the native Home icon

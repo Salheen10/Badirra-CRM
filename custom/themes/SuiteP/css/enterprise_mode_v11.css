@@ -2,6 +2,27 @@
    ENTERPRISE MODE UI ENGINE (Odoo-Inspired Deep Layout Transformation)
    ========================================================================== */
 
+/* ==========================================================================
+   CRITICAL FIX: Tailwind v4 generates `.collapse{visibility:collapse}`
+   which conflicts with Bootstrap's `.collapse` class used by SuiteCRM
+   panels. This override must come AFTER main.css is loaded.
+   ========================================================================== */
+.collapse {
+    visibility: visible !important;
+}
+.panel-collapse.collapse:not(.in) {
+    display: none !important;
+    visibility: visible !important;
+}
+.panel-collapse.collapse.in {
+    display: block !important;
+    visibility: visible !important;
+}
+.tab-pane.panel-collapse {
+    visibility: visible !important;
+}
+
+
 html[data-enterprise="true"] {
     /* Odoo Enterprise Branding */
     --ent-primary: #714B67;
