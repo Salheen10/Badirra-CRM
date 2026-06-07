@@ -175,12 +175,16 @@
       localStorage.setItem('badirra_enterprise_mode', '1');
     }
 
-    if (isEnterprise) {
+    var isHome = window.location.search === '' || 
+                 (window.location.search.indexOf('module=Home') !== -1 && window.location.search.indexOf('action=EditView') === -1);
+
+    if (isEnterprise && isHome) {
       document.documentElement.setAttribute('data-enterprise', 'true');
       loadEnterpriseApp();
     } else {
       document.documentElement.removeAttribute('data-enterprise');
     }
+    
     var labels = document.querySelectorAll('.enterprise-mode-state');
     for (var i = 0; i < labels.length; i++) {
       labels[i].textContent = isEnterprise ? 'On' : 'Off';
@@ -198,7 +202,9 @@
       document.documentElement.setAttribute('data-theme', 'dark');
   }
   var storedEntMode = localStorage.getItem('badirra_enterprise_mode');
-  if (storedEntMode === '1' || storedEntMode === null) {
+  var isHomeNow = window.location.search === '' || 
+                  (window.location.search.indexOf('module=Home') !== -1 && window.location.search.indexOf('action=EditView') === -1);
+  if ((storedEntMode === '1' || storedEntMode === null) && isHomeNow) {
       document.documentElement.setAttribute('data-enterprise', 'true');
   }
 
